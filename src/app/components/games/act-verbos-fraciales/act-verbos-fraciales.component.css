@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Poppins" ;
+}
+.container_p{
+    display: grid;
+    grid-template-columns: 30% 39.2% 30%;
+    background-color: black;
+    height: 100vh;
+    gap: 0.4vw;
+}
+.phrasals_verbs{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    border: 0.4vw dashed #FFFF;
+    justify-content: center;
+}
+.english,.spanish{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+.spanish h2{
+    font-size: 2vw;
+    border-bottom: 0.4vw dashed #FFFF;
+    text-align: center;
+}
+.english h2{
+    font-size: 2vw;
+    border-bottom: 0.4vw dashed #FFFF;
+    border-right: 0.4vw dashed #FFFF;
+    text-align: center;
+}
+
+.spanish_words,.english_words{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8vw;
+    font-size: 1.7vw;
+}
+.home_back{
+    position: absolute;
+    background-color: black;
+    top: 33vw;
+    border: 0.6vw dashed #FFFF;
+    width: 8vw;
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vw;
+    left: 3vw;
+}
+.home_back img{
+    filter: invert();
+    width: 4vw;
+}
+.phrasals_union{
+    border: 0.5vw dashed #FFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1vw;
+    gap: 1vw;
+}
+.phrasals_union h2{
+    font-size: 3vw;
+}
+.union_words{    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;}
+.message_error{
+    color: red;
+    font-size: 1.9vw;
+}
+.union{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+.union_verbs,.union_preposicion{   
+    background-color: deepskyblue;
+    width: 14vw;
+    height: 4vw;
+    border-radius: 2vw;}
+.union_mas{
+    font-size: 3vw;
+}
+.union_preposicion{
+    background-color: pink;
+}
+.info_verbs{
+    background-color: white;
+    width: 32vw;
+    height: 24vw;
+    border-radius: 1vw;
+}
+.guia_phrasals{
+    display: flex;
+    width: 100%;
+    padding-left: 5vw;
+    gap: 2vw;
+}
+.guia_verbs,.guia_preposicion{
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+.guia_verbs p,.guia_preposicion p{
+    font-size: 1.4vw;
+    font-weight: 600;
+}
+.color_verbs,.color_preposicion{
+    background-color: deepskyblue;
+    width: 6vw;
+    border-radius: 0.5vw;
+    height: 2vw;
+}
+.color_preposicion{
+    background-color: pink;
+}
+
+.phrasals_separacion{
+    border: 0.4vw dashed #FFFF;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.escojer_verbs,.escojer_preposiciones{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    align-items: center;
+    justify-content: center;
+}
+.escojer_verbs p,.escojer_preposiciones p{
+    background-color: deepskyblue;
+    border-radius: 1vw;
+    height: 3.3vw;
+    width: 12vw;
+    border: 0.2vw solid #FFFF;
+}
+.escojer_preposiciones p{
+    background-color: pink;
+}
