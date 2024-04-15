@@ -1,0 +1,83 @@
+.game__general{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+/* estilos para la puntuacion */
+.game__puntuacion{
+    width: 30vw;
+    height: 80vh;
+    border-radius: 10px;
+    border: 4px dashed #ffffff;
+    user-select: none;
+}
+.game__iniciar{
+    background-image: linear-gradient(to right,#f07587,#91d6ec);
+    color: #ffffff;
+    padding: 20px 40px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.game__iniciar:hover {
+    background: #3198dd;
+}
+.game__aciertos{
+    height: 59vh;
+    display: flex;
+    gap: 4vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.game__aciertos h2{
+    color: #ffffff;
+    font-size: 2rem;
+}
+.game__aciertos a{
+    text-decoration: none;
+    font-size: 3rem;
+    color: #3198dd;
+}
+
+.game__titulo{
+    border: 4px dashed #ffffff;
+    text-align:center;
+    font-size: 2rem;  
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+/* fin  */
+
+/* estilos para el tablero */
+.game__tablero {
+    gap: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px dashed #ffffff;
+    border-radius: 10px;
+    height: 100vh;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-gap: 10px;
+}
+.cartas{
+    width: 105px;
+    height: 105px;
+    background-color:  #e49bbd;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0, blue, alpha);
+}
+
+/* fin */
+
