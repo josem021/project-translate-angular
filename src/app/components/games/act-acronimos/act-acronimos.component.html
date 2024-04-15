@@ -1,79 +1,45 @@
 <body>
   <main>
-      <div class="contenido_selectores">
+    <div class="contenido_selectores">
+      @for(item of arratyprueba; track $index) {
+      <div class="seleccion_fila">
         <div class="seleccion_fila">
-          <div class="seleccion_fila">
-            <h1 class="titulo indie-flower-regular">A</h1>
+          <h1 class="titulo indie-flower-regular">{{item.titulo}}</h1>
+        </div>
+        <div class="cuadros_seleccionado" tabindex="0">
+          <p class="indie-flower-regular">{{item.text1}}</p>
+        </div>
+        <div class="content_oscurecer"></div>
+        <div class="conten-hover">
+          <div class="opciones">
+            <p (click)="MostrarOpciones()">Tester</p>
           </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
+          <div class="opciones margintop">
+            <p>Tester</p>
           </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
+          <div class="opciones">
+            <p>Tester</p>
           </div>
         </div>
-        <div class="seleccion_fila">
-          <div class="seleccion_fila">
-            <h1 class="titulo indie-flower-regular">A</h1>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
+
+        <div class="cuadros_seleccionado">
+          <p class="indie-flower-regular">{{item.text2}}</p>
         </div>
-        <div class="seleccion_fila">
-          <div class="seleccion_fila">
-            <h1 class="titulo indie-flower-regular">A</h1>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
+        <div class="cuadros_seleccionado">
+          <p class="indie-flower-regular">{{item.text3}}</p>
         </div>
-        <div class="seleccion_fila">
-          <div class="seleccion_fila">
-            <h1 class="titulo indie-flower-regular">A</h1>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">ejemplo</p>
-          </div>
+        <div class="cuadros_seleccionado">
+          <p class="indie-flower-regular">{{item.text4}}</p>
         </div>
       </div>
+      }
+    </div>
   </main>
   <div class="boton">
     <div><img src="../../../../assets/img/mouse.png" alt="Imagen del mouse"></div>
-    <div><h2 class="indie-flower-regular">Evaluar</h2></div>
+    <div>
+      <h2 class="indie-flower-regular">Evaluar</h2>
+    </div>
     <div><img src="../../../../assets/img/enter.png" alt="Imagen del boton enter"></div>
   </div>
 </body>

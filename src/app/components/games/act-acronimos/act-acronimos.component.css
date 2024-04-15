@@ -1,4 +1,4 @@
-body{
+body {
   padding: 3vw 30vw;
   display: flex;
   flex-direction: column;
@@ -6,12 +6,17 @@ body{
   gap: 2.5vh;
 }
 
-h1{
+h1 {
   font-size: 3vw;
   font-weight: 600;
+  cursor: pointer;
 }
 
-main{
+.seleccion_fila {
+  cursor: pointer;
+}
+
+main {
   background-color: white;
   height: auto;
   display: grid;
@@ -22,21 +27,21 @@ main{
   box-shadow: 0 0 4vw 1vw rgba(255, 255, 255, 0.5);
 }
 
-.contenido_selectores{
+.contenido_selectores {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2.5vh;
 }
 
-.seleccion_fila{
+.seleccion_fila {
   display: grid;
   justify-content: center;
   align-items: center;
   row-gap: 2.5vh;
 }
 
-.cuadros_seleccionado{
+.cuadros_seleccionado {
   background-color: #f2f2f2;
   font-size: 1vw;
   display: grid;
@@ -48,25 +53,94 @@ main{
   width: max-content;
   width: 5vw;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.boton{
+.boton {
   border: 0.4vw dashed #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   width: min-content;
-  padding: 0.5vw 3vw;
+  padding: 0.5vw 2.5vw;
   gap: 3vw;
   background-color: #96dcf8;
   border-radius: 4vw;
 }
 
-img{
+img {
   width: 3vw;
 }
 
-h2{
+h2 {
   font-size: 3vw;
   font-weight: 600;
+}
+
+.conten-hover {
+  border-radius: 0.5vw;
+  aspect-ratio: 1 / 1;
+  width: max-content;
+  width: 5vw;
+display: flex;
+  gap: 1vw;
+  position: absolute;
+  margin-left: -6vw;
+  margin-top: 33vw;
+  z-index: 100;
+opacity: 0;
+  transition: all ease 400ms;
+}
+
+.opciones {
+  border-radius: 1.5vw;
+  aspect-ratio: 1 / 1;
+  width: max-content;
+  width: 5vw;
+  background-color: #ffffff;
+  font-size: 1vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  transition: all ease-out 1s;
+}
+
+.margintop {
+  transform: translateY(4vw)
+}
+
+.content_oscurecer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+  width: 211.9vw;
+  height: 119vw;
+  z-index: 88;
+  display: none;
+
+}
+
+.cuadros_seleccionado:hover~.content_oscurecer,
+.cuadros_seleccionado:hover~.conten-hover,
+.cuadros_seleccionado:focus-within~.content_oscurecer,
+.cuadros_seleccionado:focus-within~.conten-hover {
+  display: block;
+  opacity: 1;
+  display: flex;
+  margin-left: -6vw;
+  margin-top: -7vw;
+  transition: all ease 600ms;
+}
+
+.cuadros_seleccionado:focus-within, .cuadros_seleccionado:hover {
+  outline: none;
+  border: solid 1px black;
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  display: flex;
+  transition: all ease-out 1s;
 }
