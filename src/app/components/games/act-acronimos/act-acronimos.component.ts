@@ -11,10 +11,11 @@ import { Component } from "@angular/core"
 export class ActAcronimosComponent {
  
   arratyprueba: any = [
-      { titulo: "Html",texto: [["HYPE","Hyper","HAVE"],["HYPE2","HAPPY2","text"],["HYPE3","HAPPY3","HAVE3"],["HYPE3","HAPPY3","HAVE3"]], palabra:['Hyper','text','Markup','Language'] }
+    { titulo: "Html", texto: [["Hype","Hyper","Have"],["Title","Texto","Text"],["Markup","Marke","Mark"],["Lion","Language","Luz"]], palabra:['Hyper','text','Markup','Language'] }
   ]
   MostrarOpciones() {
     alert("Si., Funciona")
+    console.log("sii")
   }
 
 }
