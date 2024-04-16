@@ -2,38 +2,40 @@
   <main>
     <div class="contenido_selectores">
       @for(item of arratyprueba; track $index) {
-      @for(item2 of item.titulo; track $index) {
-      <div class="seleccion_fila">
+        @for(item2 of item.titulo; track $index) {
         <div class="seleccion_fila">
-          <h1 class="titulo indie-flower-regular">{{item.titulo[$index]}}</h1>
-        </div>
-        <div class="cuadros_seleccionado" tabindex="0">
-          <p class="indie-flower-regular"></p>
-        </div>
-        <div class="content_oscurecer"></div>
-        <div class="conten-hover">
-          <div class="opciones">
-            <p (click)="MostrarOpciones()">{{item.texto[$index][0]}}</p>
+          <div class="seleccion_fila">
+            <h1 class="titulo indie-flower-regular">{{item.titulo[$index]}}</h1>
           </div>
-          <div class="opciones margintop">
-            <p>{{item.texto[$index][0]}}</p>
+          <div class="cuadros_seleccionado" tabindex="0">
+            @if ($index == 0) {
+              <p class="indie-flower-regular">{{item.titulo[$index]}}</p>
+            }
           </div>
-          <div class="opciones">
-            <p>{{item.texto[$index][0]}}</p>
+          <div class="content_oscurecer"></div>
+          <div class="conten-hover">
+            <div class="opciones">
+              <p (click)="MostrarOpciones()">{{item.texto[$index][0]}}</p>
+            </div>
+            <div class="opciones margintop">
+              <p>{{item.texto[$index][1]}}</p>
+            </div>
+            <div class="opciones">
+              <p>{{item.texto[$index][2]}}</p>
+            </div>
           </div>
-        </div>
 
-        <div class="cuadros_seleccionado">
-          <p class="indie-flower-regular">{{item.text2}}</p>
+          <div class="cuadros_seleccionado">
+            <p class="indie-flower-regular">{{item.text2}}</p>
+          </div>
+          <div class="cuadros_seleccionado">
+            <p class="indie-flower-regular">{{item.text3}}</p>
+          </div>
+          <div class="cuadros_seleccionado">
+            <p class="indie-flower-regular">{{item.text4}}</p>
+          </div>
         </div>
-        <div class="cuadros_seleccionado">
-          <p class="indie-flower-regular">{{item.text3}}</p>
-        </div>
-        <div class="cuadros_seleccionado">
-          <p class="indie-flower-regular">{{item.text4}}</p>
-        </div>
-      </div>
-       }
+        }
       }
     </div>
   </main>
