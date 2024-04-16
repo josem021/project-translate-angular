@@ -2,7 +2,81 @@ main {
     font-family: "Indie Flower", cursive;
     font-weight: 400;
     font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 0.82vh dashed white;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 88vh;
+    gap: 4vh;
+    text-align: center;
+    transition: 0.3s;
+}
+.containerMain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+    flex-basis: calc(50% - 10px);
+    transition: 0.5s;
+    height: 21vh;
+    margin-bottom: 2.4vh;
+
+}
+.containerGame a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 95%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: lighter;
+    border: 4.5px solid white;
+    border-radius: 0.8vw;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
 h1 {
     color: white;
+    font-size: 4.2rem;
+    transition: 0.5s;
+}
+
+@media (max-width: 600px) {
+    section {
+        gap: 0;
+        transition: 0.3s;
+    }
+    h1 {
+        font-size: 3.5rem;
+        transition: 0.5s;
+    }
+    .containerGame {
+        flex-grow: 1;
+        flex-basis: calc(65% - 10px);
+        transition: 0.5s;
+        margin-bottom: 2vh;
+        height: 20vh;
+    }
+    .containerGame a {
+        height: 18vh;
+        width: 34vh;
+        transition: 0.3s;
+        font-size: 1em;
+        font-weight: lighter;
+    }
 }
