@@ -9,11 +9,9 @@ import { Component } from "@angular/core"
   styleUrl: './act-acronimos.component.css'
 })
 export class ActAcronimosComponent {
+ 
   arratyprueba: any = [
-    { titulo: "A", text1: "jean", text2: "carlos", text3: "perez", text4: "epieyu" },
-    { titulo: "A", text1: "jean", text2: "carlos", text3: "perez", text4: "epieyu" },
-    { titulo: "A", text1: "jean", text2: "carlos", text3: "perez", text4: "epieyu" },
-    { titulo: "A", text1: "jean", text2: "carlos", text3: "perez", text4: "epieyu" },
+      { titulo: "Html",texto: [["HYPE","Hyper","HAVE"],["HYPE2","HAPPY2","text"],["HYPE3","HAPPY3","HAVE3"],["HYPE3","HAPPY3","HAVE3"]], palabra:['Hyper','text','Markup','Language'] }
   ]
   MostrarOpciones() {
     alert("Si., Funciona")

@@ -2,23 +2,24 @@
   <main>
     <div class="contenido_selectores">
       @for(item of arratyprueba; track $index) {
+      @for(item2 of item.titulo; track $index) {
       <div class="seleccion_fila">
         <div class="seleccion_fila">
-          <h1 class="titulo indie-flower-regular">{{item.titulo}}</h1>
+          <h1 class="titulo indie-flower-regular">{{item.titulo[$index]}}</h1>
         </div>
         <div class="cuadros_seleccionado" tabindex="0">
-          <p class="indie-flower-regular">{{item.text1}}</p>
+          <p class="indie-flower-regular"></p>
         </div>
         <div class="content_oscurecer"></div>
         <div class="conten-hover">
           <div class="opciones">
-            <p (click)="MostrarOpciones()">Tester</p>
+            <p (click)="MostrarOpciones()">{{item.texto[$index][0]}}</p>
           </div>
           <div class="opciones margintop">
-            <p>Tester</p>
+            <p>{{item.texto[$index][0]}}</p>
           </div>
           <div class="opciones">
-            <p>Tester</p>
+            <p>{{item.texto[$index][0]}}</p>
           </div>
         </div>
 
@@ -32,6 +33,7 @@
           <p class="indie-flower-regular">{{item.text4}}</p>
         </div>
       </div>
+       }
       }
     </div>
   </main>
