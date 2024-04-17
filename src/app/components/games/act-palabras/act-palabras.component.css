@@ -61,7 +61,10 @@
     font-weight: 900;
     color:var(--color-second-light-pink)
 }
-
+.carta__texto{
+    font-weight: 100;
+    font-size: 1.5vw;
+}
 /* fin */
 .game__iniciar{
     background-image: linear-gradient(to right,#f07587,#91d6ec);
