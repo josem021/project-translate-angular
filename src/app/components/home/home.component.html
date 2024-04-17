@@ -1,20 +1,41 @@
 <main>
     <section>
         <article class="titleHome">
-            <h1>W A L F</h1>
-        </article>
+            <h1>
+              <span style="--i:1;">W</span>
+              <span style="--i:2;">A</span>
+              <span style="--i:3;">L</span>
+              <span style="--i:4;">F</span>
+            </h1>
+          </article>
         <article class="containerMain">
-            <div class="containerGame">
-                <a [routerLink]="['/act-acronimos']" routerLinkActive="router-link-active">Acrónimos</a>
+            <div class="containerGame acronimos">
+                <a routerLink="/act-acronimos" routerLinkActive="router-link-active">
+                  Acrónimos
+                  <button class="playButton"><img src="../../../assets/img-home/play-button-home.svg"></button>
+                  <div class="gifContainer"></div>
+                </a>
+              </div>
+            <div class="containerGame palabras">
+                <a [routerLink]="['/act-palabras']" routerLinkActive="router-link-active">
+                    Palabras
+                    <button class="playButton"><img src="../../../assets/img-home/play-button-home.svg"></button>
+                    <div class="gifContainer"></div>
+                </a>
             </div>
-            <div class="containerGame">
-                <a [routerLink]="['/act-palabras']" routerLinkActive="router-link-active">Palabras</a>
+            <div class="containerGame palabrasFraciales">
+                <a [routerLink]="['/act-palabras-verbos-fraciales']" routerLinkActive="router-link-active">
+                    Palabras y Verbos Fraciales
+                    <button class="playButton"><img src="../../../assets/img-home/play-button-home.svg"></button>
+                    <div class="gifContainer"></div>
+                </a>
             </div>
-            <div class="containerGame">
-                <a [routerLink]="['/act-palabras-verbos-fraciales']" routerLinkActive="router-link-active">Palabras y Verbos Fraciales</a>
-            </div>
-            <div class="containerGame">
-                <a [routerLink]="['/act-verbos-fraciales']" routerLinkActive="router-link-active">Verbos Fraciales</a>
+            <div class="containerGame verbosFraciales">
+                <a [routerLink]="['/act-verbos-fraciales']" routerLinkActive="router-link-active">
+                    Verbos Fraciales
+                    <button class="playButton"><img src="../../../assets/img-home/play-button-home.svg"></button>
+                    <div class="gifContainer"></div>
+                </a>
             </div>
         </article>
     </section>

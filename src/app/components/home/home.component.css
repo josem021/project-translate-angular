@@ -1,82 +1,202 @@
 main {
-    font-family: "Indie Flower", cursive;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    border: 0.82vh dashed white;
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 0.82vh dashed white;
 }
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 88vh;
-    gap: 4vh;
-    text-align: center;
-    transition: 0.3s;
-}
-.containerMain {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.containerGame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 2;
-    flex-basis: calc(50% - 10px);
-    transition: 0.5s;
-    height: 21vh;
-    margin-bottom: 2.4vh;
-
-}
-.containerGame a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 95%;
-    width: 95%;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    font-weight: lighter;
-    border: 4.5px solid white;
-    border-radius: 0.8vw;
-    box-sizing: border-box;
-    transition: 0.3s;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  height: 100%;
+  width: 88vh;
+  gap: 4vh;
+  text-align: center;
 }
 h1 {
-    color: white;
-    font-size: 4.2rem;
-    transition: 0.5s;
+  color: white;
+  font-size: 4.6rem;
+  padding-top: 5vh;
+  width: 20vw;
+  letter-spacing: 0.15em;
+}
+.titleHome {
+  position: relative;
+  z-index: 15;
+}
+.titleHome h1 {
+  display: inline-block;
+  overflow: hidden;
 }
 
+.titleHome h1 span {
+  display: inline-block;
+  animation-name: wave;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: calc(0.1s * var(--i));
+}
+.containerMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.containerGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+  flex-basis: calc(50% - 10px);
+  height: 21vh;
+  margin-bottom: 2.4vh;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.containerGame a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 95%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  font-weight: lighter;
+  border: 4.5px solid white;
+  border-radius: 0.8vw;
+  box-sizing: border-box;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 1);
+  transition: 1s ease-in-out;
+}
+.containerGame:hover {
+  transform: scale(2); 
+  z-index: 10;
+}
+.containerGame:hover .playButton {
+  display: block; 
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; 
+  transition: 1s ease-in-out;
+}
+.containerGame:hover .gifContainer {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  border-radius: 0.8vw;
+  transition: 0.3s ease-in-out;
+}
+.playButton {
+  display: none;
+  border: none;
+  border-radius: 10vw;
+  height: 5vh;
+  width: 5vh;
+  cursor: pointer;
+  position: absolute;
+  top: 18.2vh;
+  text-align: center;
+}
+.playButton img {
+  height: 2.8vh;
+  width: auto;
+}
+.acronimos a:hover {
+  border: 4.5px solid rgb(6, 220, 253);;
+  border-radius: 0.8vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('../../../assets/gif/acronimos.gif');
+  transition: 1.2s ease-in-out;
+}
+.palabras a:hover {
+  border: 4.5px solid rgb(241, 87, 223);
+  border-radius: 0.8vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('../../../assets/gif/palabras.gif');
+  transition: 1.2s ease-in-out;
+}
+.palabrasFraciales a:hover {
+  border: 4.5px solid rgb(79, 251, 60);
+  border-radius: 0.8vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('../../../assets/gif/palabrasFraciales.gif');
+  transition: 1.2s ease-in-out;
+}
+.verbosFraciales a:hover {
+  border: 4.5px solid rgb(60, 82, 251);
+  border-radius: 0.8vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 101%;
+  background-image: url('../../../assets/gif/verbosFraciales.gif');
+  transition: 1.2s ease-in-out;
+}
+.acronimos:hover .playButton {
+  background-color: rgb(6, 220, 253);
+}
+.palabras:hover .playButton {
+  background-color: rgb(241, 87, 223);
+}
+.palabrasFraciales:hover .playButton {
+  background-color: rgb(79, 251, 60);
+}
+.verbosFraciales:hover .playButton {
+  background-color: rgb(60, 82, 251);
+}
+.acronimos:hover ~ .titleHome,
+.palabras:hover ~ .titleHome {
+  transform: translateY(-50px);
+  transition: transform 0.5s ease;
+}
+containerGame:not(.palabras):hover .gifContainer {
+  display: none;
+}
+containerGame:not(.acronimos):hover .gifContainer {
+  display: none;
+}
+.gifContainer {
+  display: none;
+}
+@keyframes wave {
+  0%, 40%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
 @media (max-width: 600px) {
-    section {
-        gap: 0;
-        transition: 0.3s;
-    }
-    h1 {
-        font-size: 3.5rem;
-        transition: 0.5s;
-    }
-    .containerGame {
-        flex-grow: 1;
-        flex-basis: calc(65% - 10px);
-        transition: 0.5s;
-        margin-bottom: 2vh;
-        height: 20vh;
-    }
-    .containerGame a {
-        height: 18vh;
-        width: 34vh;
-        transition: 0.3s;
-        font-size: 1em;
-        font-weight: lighter;
-    }
+  .containerGame {
+    flex-grow: 1;
+    flex-basis: calc(65% - 10px);
+    margin-bottom: 2vh;
+    height: 20vh;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+  .containerGame:hover {
+    transform: scale(1.05); 
+    z-index: 10;
+    transition: 0.6s ease-in-out;
+  }
 }
