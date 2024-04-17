@@ -1,38 +1,27 @@
 .game__general{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1vw;
+    border: 6px dashed #ffffff;
 }
 /* estilos para la puntuacion */
-.game__puntuacion{
-    width: 30vw;
-    height: 80vh;
+ .game__puntuacion{
+    display: flex;
+    margin-top: 1vw;
+    justify-content: center;
+    flex-direction: column-reverse;
     border-radius: 10px;
-    border: 4px dashed #ffffff;
     user-select: none;
+   
 }
-.game__iniciar{
-    background-image: linear-gradient(to right,#f07587,#91d6ec);
-    color: #ffffff;
-    padding: 20px 40px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
-.game__iniciar:hover {
-    background: #3198dd;
+.text--size-medium{
+    font-size: 6vh;
 }
 .game__aciertos{
-    height: 59vh;
     display: flex;
-    gap: 4vw;
+    position: absolute;
+  
+    gap: 2vw;
+    left: 10vw;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-
 }
 .game__aciertos h2{
     color: #ffffff;
@@ -43,41 +32,52 @@
     font-size: 3rem;
     color: #3198dd;
 }
-
-.game__titulo{
-    border: 4px dashed #ffffff;
-    text-align:center;
-    font-size: 2rem;  
-    border-radius: 10px;
-    color: #ffffff;
-}
-
 /* fin  */
 
 /* estilos para el tablero */
 .game__tablero {
-    gap: 10vw;
+    gap: 1vw;
+    height: 93vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 6px dashed #ffffff;
+    flex-direction: column;
     border-radius: 10px;
-    height: 100vh;
-}
+} 
 .grid {
+    margin: auto;
+    width: 40vw;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5,1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 1vw; 
 }
+
 .cartas{
-    width: 105px;
-    height: 105px;
-    background-color:  #e49bbd;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0,0, blue, alpha);
+    width: 9vw;
+    height: 9vw;
+    font-size: 4vw;
+    background-color:  #88c9f8;
+    border-radius: 1.5vh;
+    border:.5vh solid white;
+    font-weight: 900;
+    color:var(--color-second-light-pink)
 }
 
 /* fin */
+.game__iniciar{
+    background-image: linear-gradient(to right,#f07587,#91d6ec);
+    color: #ffffff;
+    padding: 20px 40px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+.game__iniciar:hover {
+    background: #3198dd;
+}
+
+
+
+
+
 

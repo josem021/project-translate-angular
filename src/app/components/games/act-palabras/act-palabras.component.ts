@@ -8,5 +8,26 @@ import { Component } from '@angular/core';
   styleUrl: './act-palabras.component.css'
 })
 export class ActPalabrasComponent {
-
+  letras:any [] =[
+    {
+      "ingles": "palabra",
+      "espanol": "espanol",
+      "image": "image"
+    },
+    {
+      "ingles": "palabra",
+      "espanol": "espanol",
+      "image": "image"
+    },
+    {
+      "ingles": "palabra",
+      "espanol": "espanol",
+      "image": "image"
+    },
+    {
+      "ingles": "palabra",
+      "espanol": "espanol",
+      "image": "image"
+    },
+  ]
 }
