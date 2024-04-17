@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+
+:root{
+  --size-emoji: 10vh;
+  --color-global-white: "white";
+  --color-global-black: "black";
+  --color-borde-emoji-white:  drop-shadow(0px 0px .2vh white) 
+                              drop-shadow(0px 0px .2vh white) 
+                              drop-shadow(0px 0px .2vh white) 
+                              drop-shadow(0px 0px .2vh white) 
+                              drop-shadow(0px 0px .2vh white);
+  --color-borde-emoji-black:  drop-shadow(0px 0px .2vh black) 
+                              drop-shadow(0px 0px .2vh black) 
+                              drop-shadow(0px 0px .2vh black) 
+                              drop-shadow(0px 0px .2vh black) 
+                              drop-shadow(0px 0px .2vh black);
+  box-sizing: border-box;
+}
+
 *{
   margin: 0px;
   padding: 0px;
@@ -22,4 +40,59 @@ h1 h2 h3 h4 h5 h6{
   font-family: "Indie Flower", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+body{
+  display: flex;
+  gap: 5vh;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.containerEmoji{
+  padding: 1%;
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  aspect-ratio: 1/1;
+  width: calc(var(--size-emoji)*2)!important;
+  top: 40px;
+  left: 30px;
+
+}
+.containerEmoji .emoji{
+  position: relative;
+  margin: 0;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  font-size: var(--size-emoji);
+}
+.containerEmoji .emoji:first-child,
+.containerEmoji .emoji:nth-child(2), 
+.containerEmoji .emoji:nth-child(3), 
+.containerEmoji .emoji:nth-child(4), 
+.containerEmoji .emoji:nth-child(5){
+  z-index: 5;
+  width: 100%;
+  position: absolute;
+}
+.containerEmoji .emoji:first-child{
+  translate: -30%;
+}
+.containerEmoji .emoji:nth-child(2){
+  translate: 0 -45%;
+  z-index: 4;
+}
+.containerEmoji .emoji:nth-child(3){
+  translate: 30%;
+}
+.containerEmoji .emoji:nth-child(4){
+  translate: 0 35%;
+}
+.containerEmoji .emoji:nth-child(5) {
+  z-index: 5;
+  font-size: calc(var(--size-emoji) * 1);
 }
