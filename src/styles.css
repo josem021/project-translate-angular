@@ -5,6 +5,9 @@
   --size-emoji: 10vh;
   --color-global-white: "white";
   --color-global-black: "black";
+  --color-primary-dark: #2c2c2c;
+  --color-second-light-blue:#a6caec;
+  --color-second-light-pink:#e59edd;
   --color-borde-emoji-white:  drop-shadow(0px 0px .2vh white) 
                               drop-shadow(0px 0px .2vh white) 
                               drop-shadow(0px 0px .2vh white) 
@@ -25,7 +28,7 @@
 }
 
 body{
-  background-color: #2c2c2c;
+  background-color: var(--color-primary-dark);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -40,12 +43,7 @@ h1, h2, h3, h4, h5, h6{
   font-style: normal;
 }
 
-body{
-  display: flex;
-  gap: 5vh;
-  flex-wrap: wrap;
-  margin: 0;
-}
+
 .containerEmoji{
   padding: 1%;
   position:relative;
