@@ -1,0 +1,23 @@
+.canvas__star{
+    width: 100%;
+    height: inherit;
+    
+}
+.container__canvas{
+    background-color: var(--BG-sky);
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    height: 100vh ;
+}
+.degradate__canvas{
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: black;
+    height: 300vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
