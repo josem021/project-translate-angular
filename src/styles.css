@@ -5,7 +5,8 @@
   --size-emoji: 3vh;
   --color-global-white: "white";
   --color-global-black: "black";
-  --color-primary-dark: #2c2c2c;
+  --color-primary-dark-medium: #2c2c2c;
+  --color-bg-dark-hard: black;
   --color-second-light-blue:#a6caec;
   --color-second-light-pink:#e59edd;
   --color-borde-emoji-white:  drop-shadow(0px 0px .2vh white) 
@@ -28,7 +29,7 @@
 }
 
 body{
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-bg-dark-hard);
 }
 
 h1, h2, h3, h4, h5, h6{

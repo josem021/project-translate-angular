@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { BtnHomeComponent } from '../../btn-home/btn-home.component';
+import { StarSkyComponent } from "../../star-sky/star-sky.component";
 
 @Component({
-  selector: 'app-act-palabras-verbos-fraciales',
-  standalone: true,
-  imports:[BtnHomeComponent],
-  templateUrl: './act-palabras-verbos-fraciales.component.html',
-  styleUrl: './act-palabras-verbos-fraciales.component.css'
+    selector: 'app-act-palabras-verbos-fraciales',
+    standalone: true,
+    templateUrl: './act-palabras-verbos-fraciales.component.html',
+    styleUrl: './act-palabras-verbos-fraciales.component.css',
+    imports: [BtnHomeComponent, StarSkyComponent]
 })
 export class ActPalabrasVerbosFracialesComponent {
   containerEmojis?: NodeListOf<HTMLDivElement>
