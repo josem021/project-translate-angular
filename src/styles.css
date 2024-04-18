@@ -42,8 +42,6 @@ h1, h2, h3, h4, h5, h6{
   font-weight: 400;
   font-style: normal;
 }
-
-
 .containerEmoji{
   padding: 1%;
   position:relative;
@@ -55,7 +53,6 @@ h1, h2, h3, h4, h5, h6{
   width: calc(var(--size-emoji)*2)!important;
   top: 40px;
   left: 30px;
-
 }
 .containerEmoji .emoji{
   position: relative;
