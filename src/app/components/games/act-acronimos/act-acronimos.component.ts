@@ -10,7 +10,7 @@ import { Component, OnInit } from "@angular/core"
 })
 export class ActAcronimosComponent implements OnInit {
 
-
+  count = 1
   arratyprueba: any = [
     {
       "abreviacion": "API",
@@ -37,9 +37,14 @@ export class ActAcronimosComponent implements OnInit {
 
   arrayJson: any = this.arratyprueba[1]
   palabra: string = ""
-
+  filaActiva?:NodeListOf<HTMLDivElement>
   ngOnInit(): void {
     this.fu()
+  }
+  ngAfterViewInit(){
+    this.filaActiva = document.querySelectorAll(".fila"+this.count)
+    console.log(this.filaActiva)
+    console.log(this.count)
   }
 
   fila1Cajas: string[] = [];
@@ -50,10 +55,10 @@ export class ActAcronimosComponent implements OnInit {
     this.palabra = this.arrayJson.abreviacion
 
     console.log(this.palabra)
-
     for (let index = 0; index < this.cantidadCaja; index++) {
       this.fila1Cajas[index] = "";
-      // console.log(index)
+      console.log("fila1Cajas")
+      console.log(this.fila1Cajas)
     }
     // console.log(cantidadCaja)
     // console.log(this.fila1Cajas[1]); 
@@ -69,7 +74,7 @@ export class ActAcronimosComponent implements OnInit {
 
     if (miDiv) {
       // Agregar una clase al elemento
-      miDiv.classList.add("cuadros_seleccionado:hover~.conten-hover");
+      miDiv.classList.add("cuadros_seleccionado:hover~.conten_hover");
     }
     
 
@@ -91,6 +96,8 @@ export class ActAcronimosComponent implements OnInit {
   indexCuadroFila1 = 0
   valorCuadroFila1(valor: any) {
     this.fila1Cajas[this.indexCuadroFila1] = valor
+    console.log("this.fila1Cajas[this.indexCuadroFila1]")
+    console.log(this.fila1Cajas)
     this.casillasLlenas()
   }
 
@@ -100,23 +107,36 @@ export class ActAcronimosComponent implements OnInit {
 
   cuadroFila1: any = [];
 
-  evaluarAcronimo() {
-    // this.cuadroFila1.forEach(element => {
-      
-    // });
-    
-    for (let index = 0; index < this.cantidadCaja; index++) {
-      this.cuadroFila1[index] = document.getElementById(`cuadros_seleccionado` + index)
-    }
 
+  evaluarAcronimo() {
     let contador = 0
+    let opcionesCorectas = 0
     this.fila1Cajas.forEach(element => {
       if (element == this.arrayJson.palabras[contador]) {
-        this.cuadroFila1[contador].style.background = "rgb(0, 236, 0)"
+        console.log(this.filaActiva)
+        this.filaActiva![contador].style.background = "rgb(0, 236, 0)"
+        //Si todos son correctas mostrar modal Modo ganar
       }
-      else { this.cuadroFila1[contador].style.background = "gray" }
+      else { this.filaActiva![contador].style.background = "gray" }
       contador++
+      if(this.count == 4){
+        // mostrar modal Modo perder
+      }
     });
+
+    if(this.filaActiva !== null){
+      this.filaActiva!.forEach(element => {
+          element.classList.remove("showHover")
+      });
+    }
+    this.count++
+    if(this.count <= 4){
+      this.filaActiva = document.querySelectorAll(".fila"+this.count)
+      this.filaActiva.forEach(element => {
+        element.classList.add("showHover")
+      });
+    }
+
   }
 
 }
