@@ -10,6 +10,11 @@ import { Component, OnInit } from "@angular/core"
 })
 export class ActAcronimosComponent implements OnInit {
 
+
+  juego: boolean = true
+  modalGanador: boolean = false
+  modalPerdedor: boolean = false
+
   count = 1
   arratyprueba: any = [
     {
@@ -35,57 +40,57 @@ export class ActAcronimosComponent implements OnInit {
     }
   ]
 
-  arrayJson: any = this.arratyprueba[1]
+  generarNumeroAleatorio(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  numeroAleatorio = this.generarNumeroAleatorio(0, this.arratyprueba.length-1);
+
+
+  arrayJson: any = this.arratyprueba[this.numeroAleatorio]
   palabra: string = ""
-  filaActiva?:NodeListOf<HTMLDivElement>
+  filaActiva?: NodeListOf<HTMLDivElement>
+
   ngOnInit(): void {
     this.fu()
   }
-  ngAfterViewInit(){
-    this.filaActiva = document.querySelectorAll(".fila"+this.count)
-    console.log(this.filaActiva)
-    console.log(this.count)
+  ngAfterViewInit() {
+    this.filaActiva = document.querySelectorAll(".fila" + this.count)
+    // console.log(this.filaActiva)
+    // console.log(this.count)
   }
 
   fila1Cajas: string[] = [];
+  fila2Cajas: string[] = [];
+  fila3Cajas: string[] = [];
+  fila4Cajas: string[] = [];
+  totalFilasCajas: any = [];
   cantidadCaja: number = 0
 
   fu() {
     this.cantidadCaja = this.arrayJson.abreviacion.length;
     this.palabra = this.arrayJson.abreviacion
 
-    console.log(this.palabra)
     for (let index = 0; index < this.cantidadCaja; index++) {
       this.fila1Cajas[index] = "";
-      console.log("fila1Cajas")
-      console.log(this.fila1Cajas)
-    }
-    // console.log(cantidadCaja)
-    // console.log(this.fila1Cajas[1]); 
-
-    for (const key in this.arrayJson) {
-      if (key == "test") {
-        // console.log(key + ": " + this.arrayJson[key]);
-      }
+      this.fila2Cajas[index] = "";
+      this.fila3Cajas[index] = "";
+      this.fila4Cajas[index] = "";
     }
 
-    // Obtener el elemento por su ID
-    const miDiv = document.getElementById("fila1Acronimo");
+    this.totalFilasCajas.push(this.fila1Cajas)
+    this.totalFilasCajas.push(this.fila2Cajas)
+    this.totalFilasCajas.push(this.fila3Cajas)
+    this.totalFilasCajas.push(this.fila4Cajas)
 
-    if (miDiv) {
-      // Agregar una clase al elemento
-      miDiv.classList.add("cuadros_seleccionado:hover~.conten_hover");
-    }
-    
-
-    // Eliminar una clase del elemento
-    // miDiv.classList.remove("claseExistente");
   }
+
+  id: number = 0
 
   divEvaluar: boolean = false
   casillasLlenas() {
     let contador = 0
-    this.fila1Cajas.forEach(element => {
+    this.totalFilasCajas[this.id].forEach((element: any) => {
       if (element != "") { contador++ }
     });
     if (contador == this.cantidadCaja) {
@@ -95,9 +100,7 @@ export class ActAcronimosComponent implements OnInit {
 
   indexCuadroFila1 = 0
   valorCuadroFila1(valor: any) {
-    this.fila1Cajas[this.indexCuadroFila1] = valor
-    console.log("this.fila1Cajas[this.indexCuadroFila1]")
-    console.log(this.fila1Cajas)
+    this.totalFilasCajas[this.id][this.indexCuadroFila1] = valor
     this.casillasLlenas()
   }
 
@@ -107,36 +110,47 @@ export class ActAcronimosComponent implements OnInit {
 
   cuadroFila1: any = [];
 
-
   evaluarAcronimo() {
     let contador = 0
+
+    console.log(this.totalFilasCajas[this.id])
+
     let opcionesCorectas = 0
-    this.fila1Cajas.forEach(element => {
+    this.totalFilasCajas[this.id].forEach((element: any) => {
       if (element == this.arrayJson.palabras[contador]) {
-        console.log(this.filaActiva)
         this.filaActiva![contador].style.background = "rgb(0, 236, 0)"
-        //Si todos son correctas mostrar modal Modo ganar
+        opcionesCorectas++
       }
       else { this.filaActiva![contador].style.background = "gray" }
       contador++
-      if(this.count == 4){
-        // mostrar modal Modo perder
+      if (this.count == 4) {
+        this.juego = false
+        this.modalPerdedor = true
+      }
+      if (opcionesCorectas == this.cantidadCaja) {
+        this.juego = false
+        this.modalGanador = true
       }
     });
 
-    if(this.filaActiva !== null){
+    this.id++
+
+    if (this.filaActiva !== null) {
       this.filaActiva!.forEach(element => {
-          element.classList.remove("showHover")
+        element.classList.remove("showHover")
       });
     }
     this.count++
-    if(this.count <= 4){
-      this.filaActiva = document.querySelectorAll(".fila"+this.count)
+    if (this.count <= 4) {
+      this.filaActiva = document.querySelectorAll(".fila" + this.count)
       this.filaActiva.forEach(element => {
         element.classList.add("showHover")
       });
     }
-
+    this.divEvaluar = false
   }
 
+  recargarPagina() {
+    window.location.reload();
+  }
 }

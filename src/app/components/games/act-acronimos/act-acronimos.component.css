@@ -1,6 +1,6 @@
 
 body {
-  padding: 3vw 30vw;
+  padding: 2vw 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,11 +53,12 @@ main {
   flex-direction: row;
   align-items: center;
   justify-items: center;
+  justify-content: center;
   padding: 1vw;
   border-radius: 0.5vw;
   aspect-ratio: 1 / 1;
   width: max-content;
-  width: 5vw;
+  width: 6.2vw;
   cursor: pointer;
 }
 
@@ -71,7 +72,8 @@ main {
   gap: 3vw;
   background-color: #96dcf8;
   border-radius: 4vw;
-  cursor: pointer;
+  /* cursor: pointer; */
+  user-select: none;
 }
 
 img {
@@ -91,7 +93,7 @@ h2 {
 
   display: flex;
   gap: 1vw;
-  transform: translate(-141%);
+  transform: translate(-161%);
   margin-top: 150%;
   z-index: -1;
   opacity: 0;
@@ -110,7 +112,7 @@ h2 {
   display: grid;
   align-items: center;
   justify-content: center;
-  padding: 1vw;
+  padding: 2vw 3.2vw;
   transition: all ease-out 1s;
 }
 
@@ -187,29 +189,36 @@ h2 {
   
 }
 
-/* .kkk{
-  position: relative;
-}
-
-.fila2acronimo{
-  position: absolute;
-  bottom: 0;
-  left: -100%;
-  background: red;
-  display: flex;
-  gap: 2vh;
-  justify-content: space-between;
-  border: 1px solid goldenrod;
-  width: 80vh;
-}
-
-.fila2acronimo div{
-  background: black;
-  border-radius: 1vh;
-  color: white;
-  height: 10vh;
-  width: 14vh;
+.modales{
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+  flex-direction: column;
+  gap: 4vh;
+  border-radius: 1vh;
+  border: 0.5vw dashed #000000;
+  margin-top: 4vh;
+  height: 80vh;
+  width: 50vw;
+  background: white;
+}
+
+.modales p{
+  max-width: 70%;
+  text-align: center;
+}
+
+.modales button{
+  padding: 8px 16px;
+  border-radius: 1vh;
+  border: 0.1vh solid black;
+  user-select: none;
+  cursor: pointer;
+}
+
+.modales button:hover{
+  background-color: #000000;
+  color: white;
+  border: 0.1vw dashed white;
+  box-shadow: 0vh 0vh 0.8vh 0.3vh black;
+}
