@@ -12,6 +12,11 @@ import { StarSkyComponent } from "../../star-sky/star-sky.component";
 export class ActPalabrasComponent implements OnInit {
   containerEmojis?: NodeListOf<HTMLDivElement>
   elemntGame: any = []
+  emojiNoEmpty: Array<number> = []
+
+  emojiChilds: Array<number>=[]
+  count = 0
+  count2 = 0
   words:any [] =[
     {
       "ingles": "Loop",
@@ -653,10 +658,240 @@ export class ActPalabrasComponent implements OnInit {
     }
   }
   ngAfterViewinit(){
-       this.containerEmojis = document.querySelectorAll(".containerEmoji")
-       this.containerEmojis.forEach(element => {
-        
-       });
+    this.containerEmojis = document.querySelectorAll(".containerEmoji")
+    console.log(this.containerEmojis)
+    const emojiNoEmpty: any[] = [];
+    let emojiChilds: any[];
+    let count = 0;
+    let count2 = 0;
+    let  elementNoEmpty: any[] = [];
+    this.containerEmojis.forEach((element: HTMLElement) => {
+      count = element.childElementCount;
+     
+      count2 = 0;
+      emojiChilds = [];
+  
+      element.childNodes.forEach((x: Node) => {
+        if (x instanceof HTMLElement && x.tagName === 'PRE') {
+          emojiChilds.push(x);
+        }
+      });
+      switch (count) {
+        case 1:
+          emojiChilds.forEach((element: HTMLElement) => {
+            if (elementContent(element)) {
+              element.style.transform = 'scale(2)';
+              element.style.left = '30%';
+              element.style.top = '15%';
+            }
+          });
+          break;
+        case 2:
+          emojiChilds.forEach((element: HTMLElement) => {
+            if (elementContent(element)) {
+              element.style.left = '15%';
+              element.style.top = '30%';
+              element.style.transform = 'scale(1.5)';
+            }
+            emptyEmoji(element);
+          });
+          break;
+        case 3:
+          emojiChilds.forEach((element: HTMLElement) => {
+            if (elementContent(element)) {
+              element.style.top = '25%';
+              element.style.transform = 'scale(1.2)';
+              emptyEmoji(element);
+            }
+          });
+          break;
+        case 4:
+          emojiChilds.forEach((element: HTMLElement) => {
+            if (elementContent(element)) {
+              element.style.top = '20%';
+              element.style.transform = 'scale(1)';
+            }
+            emptyEmoji(element);
+          });
+          break;
+        case 5:
+          emojiChilds.forEach((element: HTMLElement) => {
+            if (elementContent(element)) {
+              element.style.top = '20%';
+              element.style.transform = 'scale(1)';
+            }
+            emptyEmoji(element);
+          });
+          break;
+        default:
+          // Handle other cases if needed
+          break;
+      }
+    });
+    function elementContent(element: HTMLElement): boolean {
+      if(element.textContent != ""){
+        return true
+      }else{
+        return false
+      }
+    }
+    
+    function emptyEmoji(element: HTMLElement) {
+      if(elementContent(element)){
+        emojiNoEmpty.push(1)
+      }else{
+       emojiNoEmpty.push(0)
+      }
+      elementNoEmpty.push(element)
+      count2 ++ 
+      try {
+        if(emojiChilds.length == count2){
+          if(count2 == 2){// [0, 1], 
+            //elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1){
+              // [0, 1]
+              elementNoEmpty[1].style.top = "45%"
+              elementNoEmpty[1].style.left = "5%"
+              elementNoEmpty[1].style.scale = "2"
+              elementNoEmpty[1].style.rotate = "45deg"
+            }
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0){
+              //[1, 0]
+              elementNoEmpty[0].style.top = "15%"
+              elementNoEmpty[0].style.left = "25%"
+              elementNoEmpty[0].style.scale ="2"
+              elementNoEmpty[0].style.rotate = "-45deg"
+            }
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 1){
+              //[1, 1]
+              elementNoEmpty[0].style.filter ="drop-shadow( 0.4vh -0.2vh .2vh black)"
+            }
+          }
+          if(count2 == 3){ 
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1){
+              // [1,0,1]
+              elementNoEmpty[0].style.left = "8%"
+              elementNoEmpty[2].style.right = "8%"
+              elementNoEmpty[0].style.top = "20%"
+              elementNoEmpty[2].style.top = "20%"
+              elementNoEmpty[0].style.scale = "1.5"
+              elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
+              elementNoEmpty[2].style.scale = "1.5"
+              elementNoEmpty[2].style.zIndex = "1"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1){
+              //[0, 1, 1]
+              elementNoEmpty[1].style.top = "30%"
+              elementNoEmpty[1].style.scale = "1.5"
+              elementNoEmpty[1].style.right ="15%"
+              elementNoEmpty[1].style.zIndex ="2"
+              elementNoEmpty[2].style.zIndex ="3"
+              elementNoEmpty[2].style.top = "30%"
+              elementNoEmpty[2].style.scale = "1.5"
+              elementNoEmpty[2].style.right ="15%"
+              elementNoEmpty[2].style.filter ="drop-shadow(-0.2vh -0.2vh .2vh black)"
+            }
+          }
+          if(count2 == 4){
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0){
+              // [1, 0, 1, 0]
+              elementNoEmpty[0].style.left = "8%"
+              elementNoEmpty[2].style.right = "8%"
+              elementNoEmpty[0].style.scale = "1.5"
+              elementNoEmpty[0].style.top = "20%"
+              elementNoEmpty[2].style.top = "20%"
+              elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
+              elementNoEmpty[2].style.scale = "1.5"
+              elementNoEmpty[2].style.zIndex = "1"
+            }
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1){
+              // [1, 0, 0, 1]
+              elementNoEmpty[0].style.top = "5%"
+              elementNoEmpty[0].style.scale = "1.5"
+              elementNoEmpty[0].style.left ="15%"
+              elementNoEmpty[3].style.zIndex ="4"
+              elementNoEmpty[3].style.top = "5%"
+              elementNoEmpty[3].style.scale = "1.5"
+              elementNoEmpty[3].style.left ="15%"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0){
+              console.log("count2 == 4-3")
+              //[0, 1, 1, 0]
+              elementNoEmpty[1].style.top = "30%"
+              elementNoEmpty[1].style.scale = "1.5"
+              elementNoEmpty[1].style.right ="15%"
+              elementNoEmpty[1].style.zIndex ="6"
+              elementNoEmpty[2].style.top = "30%"
+              elementNoEmpty[2].style.scale = "1.5"
+              elementNoEmpty[2].style.right ="15%"
+              elementNoEmpty[1].style.filter ="drop-shadow(.2vh .2vh .2vh black)"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 1){
+              //[0, 0, 1, 1]
+              elementNoEmpty[2].style.top = "1%"
+              elementNoEmpty[2].style.scale = "1.5"
+              elementNoEmpty[2].style.right ="15%"
+              elementNoEmpty[3].style.zIndex ="4"
+              elementNoEmpty[3].style.top = "5%"
+              elementNoEmpty[3].style.scale = "1.5"
+              elementNoEmpty[3].style.right ="15%"
+              elementNoEmpty[2].style.filter ="drop-shadow(-.2vh .2vh .2vh black)"
+            }
+            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 1){
+              //[1, 0, 1, 1]
+              elementNoEmpty[0].style.top = "1%"
+              elementNoEmpty[0].style.scale = "1.2"
+              elementNoEmpty[0].style.left ="0%"
+              elementNoEmpty[0].style.top = "5%"
+              elementNoEmpty[2].style.top = "5%"
+              elementNoEmpty[2].style.scale = "1.2"
+              elementNoEmpty[2].style.right ="5%"
+              elementNoEmpty[3].style.scale = "1.2"
+              elementNoEmpty[3].style.filter ="drop-shadow(-.2vh .2vh .2vh black)"
+            }
+    
+          }else if(count2 == 5){//  [0, 1, 1, 0, 1]
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1 && emojiNoEmpty[4] == 1){
+              // [0, 0, 0, 1, 1]
+              elementNoEmpty[3].style.top = "7%"
+              elementNoEmpty[4].style.top = "1%"
+              elementNoEmpty[4].style.filter ="drop-shadow(0vh .4vh .2vh black)"
+              elementNoEmpty[3].style.scale = "1.5"
+              elementNoEmpty[4].style.scale = "1.5"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
+              // [0, 1, 0, 0, 1]
+              elementNoEmpty[1].style.top = "30%"
+              elementNoEmpty[4].style.top = "30%"
+              elementNoEmpty[1].style.scale = "1.5"
+              elementNoEmpty[4].style.scale = "1.5"
+              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1 && emojiNoEmpty[4] == 1){
+              // [0, 1, 0, 1, 1]
+              elementNoEmpty[1].style.top = "20%"
+              elementNoEmpty[3].style.top = "20%"
+              elementNoEmpty[4].style.top = "20%"
+              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
+              // [0, 0, 0, 0, 1]
+              elementNoEmpty[4].style.top = "20%"
+              elementNoEmpty[4].style.scale = "2"
+              elementNoEmpty[4].style.rotate = "180deg"
+              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
+            }
+            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
+              // [0, 1, 1, 0, 1]
+              elementNoEmpty[4].parent.rotate = "180deg"
+    
+            }
+          }    
+        }
+    
+      } catch (error) {}
+      
+    }
   }
 
 
