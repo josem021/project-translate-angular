@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { StarSkyComponent } from "../../star-sky/star-sky.component";
 
 @Component({
-  selector: 'app-act-palabras',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './act-palabras.component.html',
-  styleUrl: './act-palabras.component.css'
+    selector: 'app-act-palabras',
+    standalone: true,
+    templateUrl: './act-palabras.component.html',
+    styleUrl: './act-palabras.component.css',
+    imports: [CommonModule, StarSkyComponent]
 })
 export class ActPalabrasComponent implements OnInit {
   containerEmojis?: NodeListOf<HTMLDivElement>
