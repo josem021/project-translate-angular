@@ -14,25 +14,25 @@
     <div class="grid">
 
 
-      @for(letra of letras; track $index){
-
-     <button class="cartas indie-flower-regular">?</button> 
-     <button class="cartas indie-flower-regular">?</button> 
-     <button class="cartas indie-flower-regular">?</button> 
-     
-
-       <!--  <div class="containerEmoji">
-          @for(item of letra.image; track $index){
-            @if(item == "empty" || item !== ""){
-              <pre class="emoji">item</pre>
+      @for(letra of elemntGame; track $index){
+        <div style="border: 1px solid green;">
+          <div class="containerEmoji">
+            @for(item of letra.image; track $index){
+              @if(item !== ""){
+                @if(item == "empty"){
+                  <pre class="emoji" style="border: 1px solid red;"></pre>
+                }@else{
+                  <pre class="emoji" style="border: 1px solid red;  height: 10vh;">{{item}}</pre>
+                }
+              }
             }
-          }
-        </div> -->
-       <!--  <button style="display: grid;" id="0" class="cartas"><span class="cotinerEmoji">{{letra.image}}</span>{{letra.ingles}} </button> -->
+          </div>
+          <button style="display: grid;" id="0" class="cartas"><span class="carta__texto">{{letra.ingles}}</span></button>
+        </div>
+
        
       }
     </div>
-    <!-- <button class="game__iniciar" id="boton__iniciar">Iniciar juego</button> -->
   </section>
 </main>
 

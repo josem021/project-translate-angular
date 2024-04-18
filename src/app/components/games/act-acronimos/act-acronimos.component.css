@@ -1,3 +1,4 @@
+
 body {
   padding: 3vw 30vw;
   display: flex;
@@ -48,15 +49,15 @@ main {
 .cuadros_seleccionado {
   background-color: #dbdbdb;
   font-size: 1vw;
-  display: grid;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   padding: 1vw;
   border-radius: 0.5vw;
   aspect-ratio: 1 / 1;
   width: max-content;
   width: 5vw;
-  overflow: hidden;
   cursor: pointer;
 }
 
@@ -70,6 +71,7 @@ main {
   gap: 3vw;
   background-color: #96dcf8;
   border-radius: 4vw;
+  cursor: pointer;
 }
 
 img {
@@ -81,28 +83,28 @@ h2 {
   font-weight: 600;
 }
 
-.conten-hover {
+.conten_hover {
+  position: absolute;
   border-radius: 0.5vw;
   aspect-ratio: 1 / 1;
-  width: max-content;
   width: 5vw;
+
   display: flex;
   gap: 1vw;
-  position: absolute;
-  margin-left: -6vw;
-  margin-top: 33vw;
-  z-index: 100;
+  transform: translate(-141%);
+  margin-top: 150%;
+  z-index: -1;
   opacity: 0;
-  transition-property: opacity margin-top;
-  transition-duration:400ms;
-  transition-delay: 500ms, 500ms;
+  /* transition-property: margin-top;
+  transition-duration:400ms, 300ms;
+  transition-delay: 500ms, 500ms; */
 }
 
 .opciones {
   border-radius: 1.5vw;
   aspect-ratio: 1 / 1;
   width: max-content;
-  width: 5vw;
+  width: var(--width-Options);
   background-color: #ffffff;
   font-size: 1vw;
   display: grid;
@@ -129,45 +131,85 @@ h2 {
   transition-property: background-color;
   transition-duration: 100ms;
 }
-
-
-.cuadros_seleccionado:focus-within~.conten-hover {
+.showHover:focus-within > div.conten_hover, .showHover:hover > div.conten_hover {
+  z-index: 40;
+}
+/* .showHover:focus-within > div.conten_hover {
   opacity: 1;
   display: flex;
-  margin-left: -6vw;
-  margin-top: -7vw;
-  transition: all ease 600ms;
-}
-.cuadros_seleccionado:hover~.content_oscurecer, .cuadros_seleccionado:focus-within~.content_oscurecer{
+} */
+.showHover:hover~.content_oscurecer, .showHover:focus-within~.content_oscurecer{
   display: flex;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 10;
   transition-property: background-color;
   transition-delay: 300ms;
   transition-duration: 300ms;
+  z-index: 10;
 }
-.cuadros_seleccionado:hover~.conten-hover{
+.showHover:hover > div.conten_hover,.showHover:focus-within > div.conten_hover{
   animation-name: upOption;
   animation-fill-mode: both;
   animation-duration: 400ms; 
   animation-delay: 300ms; 
 }
-.cuadros_seleccionado:focus-within, .cuadros_seleccionado:hover {
+.showHover:focus-within, .showHover:hover {
   outline: none;
   border: solid 1px black;
   position: relative;
-  z-index: 100;
+  z-index: 20;
   background-color: white;
   display: flex;
-  transition: all ease-out 1s;
+  /* transition: all ease-out 1s; */
+}
+.showHover:focus-within{
+  filter: var(--color-borde-emoji-white);
 }
 @keyframes upOption {
   0%{
-    margin-top: 33vw;
     opacity: 0;
+    margin-top: 0;
   }
   100%{
-    margin-top: -7vw;
+    margin-top: 100%;
     opacity: 1;
   }
+  
 }
+@keyframes downOption {
+  0%{
+    margin-top: -55%;
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    margin-top: 0;
+  }
+  
+}
+
+/* .kkk{
+  position: relative;
+}
+
+.fila2acronimo{
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  background: red;
+  display: flex;
+  gap: 2vh;
+  justify-content: space-between;
+  border: 1px solid goldenrod;
+  width: 80vh;
+}
+
+.fila2acronimo div{
+  background: black;
+  border-radius: 1vh;
+  color: white;
+  height: 10vh;
+  width: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
