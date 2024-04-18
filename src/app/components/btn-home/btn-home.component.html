@@ -1,0 +1,49 @@
+<a class="btn__home indie-flower-regular" routerLink="" routerLinkActive="router-link-active" data-message="Volver a casa">
+    🏠
+</a>
+<style>
+    .btn__home{
+        display: flex;
+        border-style:dashed ;
+        border-color: white;
+        border-radius: 2vh;
+        border-width: 1vh;
+        aspect-ratio: 1/1;
+        width: max-content;
+        font-size: 8vh;
+        padding: 2vh;
+        box-sizing: border-box;
+        position: sticky;
+        text-decoration: none;
+        color: white;
+        
+    }
+    .btn__home::before{
+        border-style:dashed ;
+        border-color: white;
+        border-radius: 2vh;
+        border-width: 1vh;
+        font-size: 4vh;
+        font-weight: 900;
+        content: attr(data-message);
+        color: white;
+        position: absolute;
+        left: 115%;
+        right: 0;
+        top: 0;
+        margin: auto;
+        width: 0;
+        overflow: hidden;
+        text-wrap: nowrap;
+        text-align: center;
+        transition-property: width;
+        transition-duration: 200ms;
+        backdrop-filter: blur(10px);
+        border-radius: 5vh;
+        opacity: 0;
+    }
+    .btn__home:hover::before{
+        width: 12vw;
+        opacity: 1;
+    }
+</style>
