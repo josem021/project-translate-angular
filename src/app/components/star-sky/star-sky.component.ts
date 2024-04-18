@@ -33,21 +33,7 @@ export class StarSkyComponent implements AfterViewInit, OnInit {
   stopDelay: any
   numberStar = 200
   ngOnChanges(change: SimpleChanges) {
-    console.table(change)
-    for (const index in change) {
-      if (index == "PositionGo") {
-        //alert("this.PositionGo != this.PositionNow -> "+ (this.PositionGo != this.PositionNow))
-        if (this.PositionGo != this.PositionNow) {
-          this.incrementSpeed()
-        }
-      }
-      if (index == "getPositionNow") {
 
-      }
-      if (index == "getMoveDefault") {
-
-      }
-    }
   }
   ngOnInit(): void {
     this.canvas as HTMLCanvasElement

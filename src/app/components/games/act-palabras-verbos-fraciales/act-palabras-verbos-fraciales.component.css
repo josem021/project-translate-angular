@@ -1,0 +1,122 @@
+.section__vocabulary{
+    display: grid;
+    grid-template-columns: minmax(300px, 50%) minmax(300px, 50%);
+    height: 100vh;
+    gap: 1%;
+}
+.container__content{
+    display: flex;
+    border-style:dashed ;
+    border-color: white;
+    border-radius: 2vh;
+    border-width: 1vh;
+}
+.header__title{
+    color: white;
+    &.title-text{
+        font-size:6vh;
+        text-align: center;
+        margin: 0;
+        height: max-content;
+    }
+}
+.header__left{
+    display: flex;
+    gap: 1%;
+    height: max-content;
+    width: 100%;
+    .header__title{
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        margin-right: 2vh;
+        font-size: 5vh;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+.header__right{
+    height: max-content;
+    width: 100%;
+}
+.container__content{
+    padding: 2vh;
+}
+.container__left, .container__right{
+    display: grid;
+    grid-template-columns:  auto;
+    height: inherit;
+    gap: 1%;
+}
+.container__Words{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2%;
+
+    scale: 1;
+    transition-property: scale;
+    transition-duration: 200ms;
+}
+.words__items:hover{
+    scale: 1.05;
+    z-index: 10;
+    transition-property: scale;
+    transition-duration: 200ms;
+}
+.words__items{
+    border-style:solid ;
+    border-color: white;
+    border-radius: 2vh;
+    border-width: .5vh;
+    padding: 1vh 2vh;
+    cursor: pointer;
+    flex-grow: 5;
+    font-size: 5vh;
+}
+.words__items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+}
+.containerEmoji{
+     top: 0;
+     bottom: 0;
+     left: 0%!important;
+     margin: auto;
+}
+.enfasis{
+    border-color: green;
+    border-style: dashed;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background-color: var(--color-second-light-pink);
+    font-weight: 800;
+}
+.enfasis > .containerEmoji, .enfasis > p{
+    filter:var(--color-borde-emoji-black)
+}
+.container__Words::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 1vh;
+
+  }
+/* width */
+::-webkit-scrollbar {
+    width: 2vh;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 2vh;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-second-light-blue);
+    scale: 1.3;
+  }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BtnHomeComponent } from '../../btn-home/btn-home.component';
 import { StarSkyComponent } from "../../star-sky/star-sky.component";
 
@@ -9,13 +9,19 @@ import { StarSkyComponent } from "../../star-sky/star-sky.component";
     styleUrl: './act-palabras-verbos-fraciales.component.css',
     imports: [BtnHomeComponent, StarSkyComponent]
 })
-export class ActPalabrasVerbosFracialesComponent {
+export class ActPalabrasVerbosFracialesComponent implements OnInit{  
+  contenedor1: any
+  contenedor2: any
+  ngOnInit(): void {
+    this.contenedor1 as HTMLDivElement
+    this.contenedor2 as HTMLDivElement
+  }
   containerEmojis?: NodeListOf<HTMLDivElement>
   emojiNoEmpty: Array<number> = []
- 
   emojiChilds: Array<number>=[]
   count = 0
   count2 = 0
+
   words: any = [
     {
       "palabras": [
@@ -2033,6 +2039,16 @@ export class ActPalabrasVerbosFracialesComponent {
     }
   ]
   ngAfterViewInit(){
+    this.contenedor1 = document.getElementById('containerWordsLeft');
+    this.contenedor2 = document.getElementById('containerWordsRight');
+    this.contenedor1.addEventListener("scroll", () => {
+      this.contenedor2.scrollTop = this.contenedor1.scrollTop;
+    });
+
+    this.contenedor2.addEventListener('scroll', () => {
+      // Sincroniza el scroll de contenedor1 con contenedor2
+      this.contenedor1.scrollTop = this.contenedor2.scrollTop;
+    });
     this.containerEmojis = document.querySelectorAll(".containerEmoji")
     console.log(this.containerEmojis)
     const emojiNoEmpty: any[] = [];
@@ -2270,5 +2286,21 @@ export class ActPalabrasVerbosFracialesComponent {
   }
   
 
+  showPareja(even: MouseEvent){
+    const elemento = even.target as HTMLElement;
+    let target = document.querySelectorAll("#"+elemento.id)
+    target.forEach(element => {
+        element.classList.add("enfasis")
+    });
+  }
+  ocultarPareja(even: MouseEvent){
+    const elemento = even.target as HTMLElement;
+    let target = document.querySelectorAll("#"+elemento.id)
+    target.forEach(element => {
+      if(element.classList.contains("enfasis")){
+        element.classList.remove("enfasis")
+      }
+    });
+  }
 }
 

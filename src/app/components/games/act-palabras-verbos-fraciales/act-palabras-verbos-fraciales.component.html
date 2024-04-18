@@ -9,9 +9,9 @@
                 VACABULARY ENGLISH
             </h3>
         </header>
-        <section class="container__Words">
+        <section class="container__Words" id="containerWordsLeft">
             @for (item of words[0].palabras; track $index) {
-                <div class="words__items indie-flower-regular">
+                <div class="words__items indie-flower-regular" id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
                     <p>{{item.ingles}}</p>
                     <div class="containerEmoji">
                         @for(images of item.image; track $index){
@@ -34,9 +34,9 @@
                 VACABULARY ENGLISH
             </h1>
         </header>
-        <section class="container__Words">
+        <section class="container__Words" id="containerWordsRight">
             @for (item of words[0].palabras; track $index) {
-                <div class="words__items indie-flower-regular">
+                <div class="words__items indie-flower-regular" #element id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
                     <p>{{item.espanol}}</p>
                     <div class="containerEmoji">
                         @for(images of item.image; track $index){
@@ -56,92 +56,5 @@
 </section>
 <style>
 
-    .section__vocabulary{
-        display: grid;
-        grid-template-columns: minmax(300px, 50%) minmax(300px, 50%);
-        height: 100vh;
-        gap: 1%;
-    }
-    .container__content{
-        display: flex;
-        border-style:dashed ;
-        border-color: white;
-        border-radius: 2vh;
-        border-width: 1vh;
-    }
-    .header__title{
-        color: white;
-        &.title-text{
-            font-size:6vh;
-            text-align: center;
-            margin: 0;
-        }
-    }
-    .header__left{
-        display: flex;
-        gap: 1%;
-        height: max-content;
-        width: 100%;
-        .header__title{
-            margin-top: 2vh;
-            margin-bottom: 2vh;
-            margin-right: 2vh;
-            font-size: 5vh;
-            text-align: center;
-            font-weight: 600;
-        }
-    }
-    .header__right{
-        height: max-content;
-        width: 100%;
-    }
-    .container__content{
-        padding: 2vh;
-    }
-    .container__left, .container__right{
-        display: grid;
-        grid-template-columns:  auto;
-        height: inherit;
-        gap: 1%;
-    }
-    .container__Words{
-        color: white;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding: 2%;
-    
-        scale: 1;
-        transition-property: scale;
-        transition-duration: 200ms;
-    }
-    .words__items:hover{
-        scale: 1.05;
-        z-index: 10;
-        transition-property: scale;
-        transition-duration: 200ms;
-    }
-    .words__items{
-        border-style:solid ;
-        border-color: white;
-        border-radius: 2vh;
-        border-width: .5vh;
-        padding: 1vh 2vh;
-        cursor: pointer;
-        flex-grow: 5;
-    }
-    .words__items{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5vh;
-    }
-    .containerEmoji{
-         top: 0;
-         bottom: 0;
-         left: 0%!important;
-         margin: auto;
-    }
+   
 </style>
