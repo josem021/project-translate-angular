@@ -26,6 +26,38 @@
                     </div>
                 </div>
             }
+            @for (item of words[0].PhrasalVerb[0].Verbo; track $index) {
+                <div class="words__items indie-flower-regular" id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
+                    <p>{{item.ingles}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
+            @for (item of words[0].PhrasalVerb[0].Preposiciones; track $index) {
+                <div class="words__items indie-flower-regular" id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
+                    <p>{{item.ingles}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
         </section>
     </div>
     <div class="container__right container__content">
@@ -37,6 +69,38 @@
         <section class="container__Words" id="containerWordsRight">
             @for (item of words[0].palabras; track $index) {
                 <div class="words__items indie-flower-regular" #element id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
+                    <p>{{item.espanol}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
+            @for (item of words[0].PhrasalVerb[0].Verbo; track $index) {
+                <div class="words__items indie-flower-regular" id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
+                    <p>{{item.espanol}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
+            @for (item of words[0].PhrasalVerb[0].Preposiciones; track $index) {
+                <div class="words__items indie-flower-regular" id="{{item.ingles}}" (mouseenter)="showPareja($event)" (mouseleave)="ocultarPareja($event)">
                     <p>{{item.espanol}}</p>
                     <div class="containerEmoji">
                         @for(images of item.image; track $index){
