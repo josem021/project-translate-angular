@@ -20,49 +20,49 @@ export class ActAcronimosComponent implements OnInit {
     {
     "abreviacion":"API",
     "ingles":"Application Programming Interface",
-    "Español":"Interfaz de programación de aplicaciones",
+    "espanol":"Interfaz de programación de aplicaciones",
     "palabras":["Application","Programming","Interface"],
     "test":[["Algorithm","Application","array"],["Protocol","Programming","Proxy"],["Interface","Inheritance","Index"]]
     },
     {
       "abreviacion":"APK",
       "ingles":"Android Application Package",
-      "Español":"Paquete de aplicaciones de Android",
+      "espanol":"Paquete de aplicaciones de Android",
       "palabras": ["Android","Application","Package"],
       "test":[["agile","Architecture","Android"],["Algorithm","Application","array"],["Package","Protocol","Pointer"]]
     },
     {
       "abreviacion":"BD",
       "ingles":"Data Base",
-      "Español":"Base de datos",
+      "espanol":"Base de datos",
       "palabras":["Data","Base"],
       "test":[["Debug","Driver","Data"],["Binary","Branch","Base"]]
     },
     {
       "abreviacion":"BIOS",
       "ingles":"Basic Input Output System",
-      "Español":"entrada básica y sistema de salida",
+      "espanol":"entrada básica y sistema de salida",
       "palabras":["Basic","Input","Output","System"],
       "test":[["Bug","Blockchain","Basic"],["Input","Interface","Integration"],["Object","Optimization","Output"],["Server","Socket","System"]]
     },
     {
       "abreviacion":"CD",
       "ingles":"Compact Disc",
-      "Español":"Disco compacto",
+      "espanol":"Disco compacto",
       "palabras":["Compact","Disc"],
       "test": [["Compiler","Compact","Container"],["Deployment","Binary","Disc"]]
     },
     {
       "abreviacion":"CDN",
       "ingles":"Content Delivery Network",
-      "Español":"Red de entrega de contenidos",
+      "espanol":"Red de entrega de contenidos",
       "palabras":["Content","Delivery","Network"],
       "test":[["Command","Central","Content"],["development","Data","Delivery"]]
     },
     {
       "abreviacion": "CLI",
       "ingles": "Command Line Interface",
-      "Español": "Interfaz de línea de comando",
+      "espanol": "Interfaz de línea de comando",
       "palabras": [
         "Command",
         "Line",
@@ -74,7 +74,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "CMS",
       "ingles": "Content Management System",
-      "Español": "Sistema de gestión de contenidos",
+      "espanol": "Sistema de gestión de contenidos",
       "palabras": [
         "Content",
         "Management",
@@ -86,7 +86,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "CPU",
       "ingles": "Central processing unit",
-      "Español": "Unidad Central de procesamiento",
+      "espanol": "Unidad Central de procesamiento",
       "palabras": [
         "Central",
         "processing",
@@ -98,7 +98,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "CRUD",
       "ingles": "Create Read Update Delete",
-      "Español": "Crear, Leer, Actualizar y Eliminar",
+      "espanol": "Crear, Leer, Actualizar y Eliminar",
       "palabras": [
         "Create",
         "Read",
@@ -111,7 +111,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "CSS",
       "ingles": "Cascading Style Sheets",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Cascading",
         "Style",
@@ -123,7 +123,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "DBMS",
       "ingles": "Data Base Management System",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Data",
         "Base",
@@ -136,7 +136,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "DNS",
       "ingles": "Domain Name System",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Domain",
         "Name",
@@ -148,7 +148,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "DOM",
       "ingles": "Document Object Model",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Document",
         "Object",
@@ -160,7 +160,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "FIFO",
       "ingles": "First In First Out",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "First",
         "In",
@@ -173,7 +173,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "GIT",
       "ingles": "Global information tracker",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Global",
         "information",
@@ -185,7 +185,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "GPT",
       "ingles": "Generative Pretrained Transformer",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Generative",
         "Pretrained",
@@ -197,7 +197,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "GPU",
       "ingles": "Graphics processing unit",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Graphics",
         "processing",
@@ -209,7 +209,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "GUI",
       "ingles": "Graphic User Interface",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Graphic",
         "User",
@@ -221,7 +221,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "HDD",
       "ingles": "Hard disk drive",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Hard",
         "disk",
@@ -233,7 +233,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "HTML",
       "ingles": "Hyper text Markup Language",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Hyper",
         "text",
@@ -246,7 +246,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "HTTP",
       "ingles": "Hyper text Transfer Protocol",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Hyper",
         "text",
@@ -259,7 +259,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "HTTPS",
       "ingles": "Hyper text Transfer Protocol Secure",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Hyper",
         "text",
@@ -273,7 +273,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "IA",
       "ingles": "Artificial Intelligence",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Artificial",
         "Intelligence"
@@ -284,7 +284,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "IDE",
       "ingles": "Integrated Development Environment",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Integrated",
         "Development",
@@ -296,7 +296,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "IP",
       "ingles": "Internet Protocol",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Internet",
         "Protocol"
@@ -307,7 +307,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "java",
       "ingles": "Just Another Vague Acronym",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Just",
         "Another",
@@ -320,7 +320,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "JAVA",
       "ingles": "Just Another Vague Acronym",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Just",
         "Another",
@@ -333,7 +333,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "JSON",
       "ingles": "Java Script Object Model",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Java",
         "Script",
@@ -346,7 +346,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "ML",
       "ingles": "Machine Learning",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Machine",
         "Learning"
@@ -357,7 +357,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "MVP",
       "ingles": "Minimon Viable Product",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Minimon",
         "Viable",
@@ -369,7 +369,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "OOP",
       "ingles": "Object oriented programming",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Object",
         "oriented",
@@ -381,7 +381,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "PERL",
       "ingles": "Practical Extraction Reporting Language",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Practical",
         "Extraction",
@@ -394,7 +394,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "PO",
       "ingles": "Product Owner",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Product",
         "Owner"
@@ -405,7 +405,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "RAM",
       "ingles": "Random access memory",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Random",
         "access",
@@ -417,7 +417,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "REST",
       "ingles": "Representational State Transfer",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Representational",
         "State",
@@ -429,7 +429,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SASS",
       "ingles": "Sassy Cascading Style Sheets",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Sassy",
         "Cascading",
@@ -442,7 +442,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SDK",
       "ingles": "software development kit",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "software",
         "development",
@@ -454,7 +454,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SEO",
       "ingles": "Search Engine Optimization",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Search",
         "Engine",
@@ -466,7 +466,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SOAP",
       "ingles": "Simple Object Access Protocol",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Simple",
         "Object",
@@ -479,7 +479,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SQL",
       "ingles": "Structured Query Language",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Structured",
         "Query",
@@ -491,7 +491,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SSD",
       "ingles": "Solid State Drive",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Solid",
         "State",
@@ -503,7 +503,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "SSL",
       "ingles": "Secure Sockets layer",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Secure",
         "Sockets",
@@ -515,7 +515,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "TDD",
       "ingles": "Test Driven Development",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Test",
         "Driven",
@@ -527,7 +527,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "UI",
       "ingles": "User interface",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "User",
         "interface"
@@ -538,7 +538,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "URL",
       "ingles": "Uniform Resource Locator",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Uniform",
         "Resource",
@@ -550,7 +550,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "UX",
       "ingles": "User Experience",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "User",
         "Experience"
@@ -561,7 +561,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "VCS",
       "ingles": "voice communication system",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "voice",
         "communication",
@@ -573,7 +573,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "VPN",
       "ingles": "Virtual Private Network",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Virtual",
         "Private",
@@ -585,7 +585,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "VRAM",
       "ingles": "Video Random Access Memory",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "Video",
         "Random",
@@ -598,7 +598,7 @@ export class ActAcronimosComponent implements OnInit {
     {
       "abreviacion": "WWW",
       "ingles": "World Wide Web",
-      "Español": "",
+      "espanol": "",
       "palabras": [
         "World",
         "Wide",

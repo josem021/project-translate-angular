@@ -14,14 +14,14 @@ export class ActPalabrasComponent implements OnInit {
   words:any [] =[
     {
       "ingles": "Loop",
-      "español": "Bucle",
+      "espanol": "Bucle",
       "image": [
         "🔁"
       ]
     },
     {
       "ingles": "Break",
-      "español": "Romper",
+      "espanol": "Romper",
       "image": [
         "⛓️",
         "empty",
@@ -30,7 +30,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Code",
-      "español": "Codigo",
+      "espanol": "Codigo",
       "image": [
         "🤚",
         "💻"
@@ -38,21 +38,21 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Array",
-      "español": "Coleccion",
+      "espanol": "Coleccion",
       "image": [
         "📝"
       ]
     },
     {
       "ingles": "Object",
-      "español": "Objecto",
+      "espanol": "Objecto",
       "image": [
         "🌟"
       ]
     },
     {
       "ingles": "Argument",
-      "español": "Argumento",
+      "espanol": "Argumento",
       "image": [
         "🗣",
         "📑"
@@ -60,14 +60,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Database",
-      "español": "Base de datos",
+      "espanol": "Base de datos",
       "image": [
         "🗄"
       ]
     },
     {
       "ingles": "Conditional",
-      "español": "Condicional",
+      "espanol": "Condicional",
       "image": [
         "❓",
         "empty",
@@ -76,7 +76,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Inheritance",
-      "español": "Herencia",
+      "espanol": "Herencia",
       "image": [
         "👱",
         "empty",
@@ -86,7 +86,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Syntax",
-      "español": "Sintaxis",
+      "espanol": "Sintaxis",
       "image": [
         "🔢",
         "empty",
@@ -96,14 +96,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Style",
-      "español": "Estilo",
+      "espanol": "Estilo",
       "image": [
         "👔"
       ]
     },
     {
       "ingles": "Component",
-      "español": "Componentes",
+      "espanol": "Componentes",
       "image": [
         "🧩",
         "empty",
@@ -113,7 +113,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Generate",
-      "español": "Generar",
+      "espanol": "Generar",
       "image": [
         "🖱️",
         "📄"
@@ -121,49 +121,49 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Run",
-      "español": "Correr",
+      "espanol": "Correr",
       "image": [
         "🏃"
       ]
     },
     {
       "ingles": "Save",
-      "español": "Salvar",
+      "espanol": "Salvar",
       "image": [
         "💾"
       ]
     },
     {
       "ingles": "While",
-      "español": "Mientras",
+      "espanol": "Mientras",
       "image": [
         "🔃"
       ]
     },
     {
       "ingles": "For",
-      "español": "Para",
+      "espanol": "Para",
       "image": [
         "🔄"
       ]
     },
     {
       "ingles": "Developer",
-      "español": "Desarrollador",
+      "espanol": "Desarrollador",
       "image": [
         "👨‍💻"
       ]
     },
     {
       "ingles": "Return",
-      "español": "Retornar",
+      "espanol": "Retornar",
       "image": [
         "↩️"
       ]
     },
     {
       "ingles": "Implement",
-      "español": "Implementar",
+      "espanol": "Implementar",
       "image": [
         "🖥️",
         "empty",
@@ -173,7 +173,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Concatenate",
-      "español": "Concatenar",
+      "espanol": "Concatenar",
       "image": [
         "🅰️",
         "empty",
@@ -184,21 +184,21 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Import",
-      "español": "Importar",
+      "espanol": "Importar",
       "image": [
         "📥"
       ]
     },
     {
       "ingles": "Build",
-      "español": "construcción",
+      "espanol": "construcción",
       "image": [
         "🏗️"
       ]
     },
     {
       "ingles": "Commit",
-      "español": "Comprometerse",
+      "espanol": "Comprometerse",
       "image": [
         "📤",
         "📩"
@@ -206,14 +206,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Encapsulation",
-      "español": "Encapsulamiento",
+      "espanol": "Encapsulamiento",
       "image": [
         "💊"
       ]
     },
     {
       "ingles": "Polymorphism",
-      "español": "Polimorfismo",
+      "espanol": "Polimorfismo",
       "image": [
         "📂",
         "📁"
@@ -221,14 +221,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Container",
-      "español": "Contenedor",
+      "espanol": "Contenedor",
       "image": [
         "📦"
       ]
     },
     {
       "ingles": "Debugging",
-      "español": "Depuracion",
+      "espanol": "Depuracion",
       "image": [
         "🔍",
         "✔️"
@@ -236,7 +236,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Namespace",
-      "español": "Espacio de Nombres",
+      "espanol": "Espacio de Nombres",
       "image": [
         "🗒",
         "🔡"
@@ -244,56 +244,56 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "right",
-      "español": "Derecha",
+      "espanol": "Derecha",
       "image": [
         "➡️"
       ]
     },
     {
       "ingles": "Top",
-      "español": "Abajo",
+      "espanol": "Abajo",
       "image": [
         "⬆️"
       ]
     },
     {
       "ingles": "Bottom",
-      "español": "Arriba",
+      "espanol": "Arriba",
       "image": [
         "⬇️"
       ]
     },
     {
       "ingles": "Justify",
-      "español": "justificar",
+      "espanol": "justificar",
       "image": [
         "📏"
       ]
     },
     {
       "ingles": "left",
-      "español": "Izquierda",
+      "espanol": "Izquierda",
       "image": [
         "➡️"
       ]
     },
     {
       "ingles": "Label",
-      "español": "Etiqueta",
+      "espanol": "Etiqueta",
       "image": [
         "🏷️"
       ]
     },
     {
       "ingles": "Delete",
-      "español": "Borrar",
+      "espanol": "Borrar",
       "image": [
         "🗑️"
       ]
     },
     {
       "ingles": "Abstraction",
-      "español": "Abstraccion",
+      "espanol": "Abstraccion",
       "image": [
         "empty",
         "📗",
@@ -303,7 +303,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Concurrency",
-      "español": "Concurrencia",
+      "espanol": "Concurrencia",
       "image": [
         "👨‍💻",
         "empty",
@@ -312,14 +312,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Parallelism",
-      "español": "Paralelismo",
+      "espanol": "Paralelismo",
       "image": [
         "🔀"
       ]
     },
     {
       "ingles": "Bug",
-      "español": "Fallo",
+      "espanol": "Fallo",
       "image": [
         "🚫",
         "empty",
@@ -330,7 +330,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Data",
-      "español": "Datos",
+      "espanol": "Datos",
       "image": [
         "empty",
         "📓",
@@ -340,7 +340,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Services",
-      "español": "Servicios",
+      "espanol": "Servicios",
       "image": [
         "empty",
         "empty",
@@ -350,14 +350,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Injectable",
-      "español": "Inyectable",
+      "espanol": "Inyectable",
       "image": [
         "💉"
       ]
     },
     {
       "ingles": "Export",
-      "español": "Exportar",
+      "espanol": "Exportar",
       "image": [
         "empty",
         "📤",
@@ -367,7 +367,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Routes",
-      "español": "Rutas",
+      "espanol": "Rutas",
       "image": [
         "🌎",
         "empty",
@@ -378,7 +378,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Import",
-      "español": "Importar",
+      "espanol": "Importar",
       "image": [
         "empty",
         "📥",
@@ -388,7 +388,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Loading",
-      "español": "Cargando",
+      "espanol": "Cargando",
       "image": [
         "empty",
         "🔋",
@@ -398,7 +398,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Binary Numbers",
-      "español": "Números Binarios",
+      "espanol": "Números Binarios",
       "image": [
         "empty",
         "🔢",
@@ -408,7 +408,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Selector",
-      "español": "Selector",
+      "espanol": "Selector",
       "image": [
         "empty",
         "empty",
@@ -418,7 +418,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Link",
-      "español": "Enlace",
+      "espanol": "Enlace",
       "image": [
         "📱",
         "empty",
@@ -428,7 +428,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Get",
-      "español": "Obtener",
+      "espanol": "Obtener",
       "image": [
         "💁",
         "empty",
@@ -438,7 +438,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Obtain",
-      "español": "Obtener",
+      "espanol": "Obtener",
       "image": [
         "empty",
         "🎁",
@@ -448,7 +448,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Ways",
-      "español": "Maneras",
+      "espanol": "Maneras",
       "image": [
         "💳",
         "💴",
@@ -458,14 +458,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Appropriate",
-      "español": "Adecuado",
+      "espanol": "Adecuado",
       "image": [
         "👌"
       ]
     },
     {
       "ingles": "Review",
-      "español": "Revisar",
+      "espanol": "Revisar",
       "image": [
         "🔎",
         "📰",
@@ -474,14 +474,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Promise",
-      "español": "Prometer",
+      "espanol": "Prometer",
       "image": [
         "🤞"
       ]
     },
     {
       "ingles": "Index",
-      "español": "Índice",
+      "espanol": "Índice",
       "image": [
         "📑",
         "📌",
@@ -490,7 +490,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Fragment",
-      "español": "Fragmento",
+      "espanol": "Fragmento",
       "image": [
         "🧩",
         "empty",
@@ -501,14 +501,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Applications",
-      "español": "Aplicaciones",
+      "espanol": "Aplicaciones",
       "image": [
         "📱"
       ]
     },
     {
       "ingles": "Class",
-      "español": "Clase",
+      "espanol": "Clase",
       "image": [
         "💼",
         "empty",
@@ -519,7 +519,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Copy",
-      "español": "Copiar",
+      "espanol": "Copiar",
       "image": [
         "empty",
         "📰",
@@ -529,7 +529,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Identation",
-      "español": "Identacion",
+      "espanol": "Identacion",
       "image": [
         "👩‍💻",
         "📑",
@@ -538,7 +538,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Function",
-      "español": "Funcion",
+      "espanol": "Funcion",
       "image": [
         "💻",
         "🔩",
@@ -547,7 +547,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Modifiers",
-      "español": "Modificadores",
+      "espanol": "Modificadores",
       "image": [
         "empty",
         "empty",
@@ -557,7 +557,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Type",
-      "español": "Tipo",
+      "espanol": "Tipo",
       "image": [
         "📚",
         "",
@@ -566,14 +566,14 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Primary key",
-      "español": "Clave primaria",
+      "espanol": "Clave primaria",
       "image": [
         "🔑"
       ]
     },
     {
       "ingles": "Storage",
-      "español": "Almacenamiento",
+      "espanol": "Almacenamiento",
       "image": [
         "empty",
         "💽",
@@ -583,7 +583,7 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Extensions",
-      "español": "Extenciones",
+      "espanol": "Extenciones",
       "image": [
         "empty",
         "empty",
@@ -593,21 +593,21 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Connection",
-      "español": "Conexion",
+      "espanol": "Conexion",
       "image": [
         "🔌"
       ]
     },
     {
       "ingles": "screen",
-      "español": "Pantalla",
+      "espanol": "Pantalla",
       "image": [
         "🖥️"
       ]
     },
     {
       "ingles": "Program",
-      "español": "Programa",
+      "espanol": "Programa",
       "image": [
         "💻",
         "👩‍💻",
@@ -616,28 +616,28 @@ export class ActPalabrasComponent implements OnInit {
     },
     {
       "ingles": "Callback",
-      "español": "Retro llamada",
+      "espanol": "Retro llamada",
       "image": [
         "📳"
       ]
     },
     {
       "ingles": "payload",
-      "español": "Carga Util",
+      "espanol": "Carga Util",
       "image": [
         "🔋"
       ]
     },
     {
       "ingles": "Memoization",
-      "español": "Memorización",
+      "espanol": "Memorización",
       "image": [
         "🧠"
       ]
     },
     {
       "ingles": "Streaming",
-      "español": "transmisión",
+      "espanol": "transmisión",
       "image": [
         "📺",
         "empty",

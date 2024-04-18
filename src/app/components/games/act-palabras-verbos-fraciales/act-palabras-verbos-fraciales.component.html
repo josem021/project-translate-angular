@@ -1,1 +1,146 @@
-<p>act-palabras-verbos-fraciales works!</p>
+<section class="section__vocabulary">
+    <div class="container__left container__content">
+        <header class="header header__left">
+            <div class="container__btn-home">
+                <app-btn-home></app-btn-home>
+            </div>
+            <h3 class="header__title">
+                VACABULARY ENGLISH
+            </h3>
+        </header>
+        <section class="container__Words">
+            @for (item of words[0].palabras; track $index) {
+                <div class="words__items indie-flower-regular">
+                    <p>{{item.ingles}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+    <div class="container__right container__content">
+        <header class="header header__right">
+            <h1 class="header__title title-text">
+                VACABULARY ENGLISH
+            </h1>
+        </header>
+        <section class="container__Words">
+            @for (item of words[0].palabras; track $index) {
+                <div class="words__items indie-flower-regular">
+                    <p>{{item.espanol}}</p>
+                    <div class="containerEmoji">
+                        @for(images of item.image; track $index){
+                            @if(images !== ""){
+                              @if(images == "empty"){
+                                <pre class="emoji"></pre>
+                              }@else{
+                                <pre class="emoji">{{images}}</pre>
+                              }
+                            }
+                          }
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</section>
+<style>
+
+    .section__vocabulary{
+        display: grid;
+        grid-template-columns: minmax(300px, 50%) minmax(300px, 50%);
+        height: 100vh;
+        gap: 1%;
+    }
+    .container__content{
+        display: flex;
+        border-style:dashed ;
+        border-color: white;
+        border-radius: 2vh;
+        border-width: 1vh;
+    }
+    .header__title{
+        color: white;
+        &.title-text{
+            font-size:6vh;
+            text-align: center;
+            margin: 0;
+        }
+    }
+    .header__left{
+        display: flex;
+        gap: 1%;
+        height: max-content;
+        width: 100%;
+        .header__title{
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+            margin-right: 2vh;
+            font-size: 5vh;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+    .header__right{
+        height: max-content;
+        width: 100%;
+    }
+    .container__content{
+        padding: 2vh;
+    }
+    .container__left, .container__right{
+        display: grid;
+        grid-template-columns:  auto;
+        height: inherit;
+        gap: 1%;
+    }
+    .container__Words{
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 2%;
+    
+        scale: 1;
+        transition-property: scale;
+        transition-duration: 200ms;
+    }
+    .words__items:hover{
+        scale: 1.05;
+        z-index: 10;
+        transition-property: scale;
+        transition-duration: 200ms;
+    }
+    .words__items{
+        border-style:solid ;
+        border-color: white;
+        border-radius: 2vh;
+        border-width: .5vh;
+        padding: 1vh 2vh;
+        cursor: pointer;
+        flex-grow: 5;
+    }
+    .words__items{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+    }
+    .containerEmoji{
+         top: 0;
+         bottom: 0;
+         left: 0%!important;
+         margin: auto;
+    }
+</style>
