@@ -31,7 +31,7 @@ export class StarSkyComponent implements AfterViewInit, OnInit {
   speedTemporal:number = 1
   speedBase = 1;
   stopDelay: any
-  numberStar = 500
+  numberStar = 200
   ngOnChanges(change: SimpleChanges) {
     console.table(change)
     for (const index in change) {
