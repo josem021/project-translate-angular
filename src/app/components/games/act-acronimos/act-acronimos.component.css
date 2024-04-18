@@ -165,9 +165,39 @@ h2 {
   0%{
     margin-top: 33vw;
     opacity: 0;
+    z-index: -1;
   }
   100%{
     margin-top: -7vw;
     opacity: 1;
+    display: flex;
   }
+  
 }
+
+/* .kkk{
+  position: relative;
+}
+
+.fila2acronimo{
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  background: red;
+  display: flex;
+  gap: 2vh;
+  justify-content: space-between;
+  border: 1px solid goldenrod;
+  width: 80vh;
+}
+
+.fila2acronimo div{
+  background: black;
+  border-radius: 1vh;
+  color: white;
+  height: 10vh;
+  width: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

@@ -1,49 +1,48 @@
 <body>
   <main>
     <div class="contenido_selectores">
-      @for(item of arratyprueba; track $index) {
-        @for(item2 of item.titulo; track $index) {
+      @for(item of palabra; track $index) {
         <div class="seleccion_fila">
           <div class="seleccion_fila">
-            <h1 class="titulo indie-flower-regular">{{item.titulo[$index]}}</h1>
+            <h1 class="titulo indie-flower-regular">{{arrayJson.abreviacion[$index]}}</h1>
           </div>
-          <div class="cuadros_seleccionado" tabindex="0">
-            @if ($index == 0) {
-              <p class="indie-flower-regular">{{item.titulo[$index]}}</p>
-            }
+          <div class="cuadros_seleccionado" id="cuadros_seleccionado{{$index}}" tabindex="0" (click)="posicionCuadroFila1($index)">
+            
+            <p class="indie-flower-regular">{{fila1Cajas[$index]}}</p>
+      
           </div>
           <div class="content_oscurecer"></div>
           <div class="conten-hover">
-            <div class="opciones">
-              <p (click)="MostrarOpciones()">{{item.texto[$index][0]}}</p>
+            <div class="opciones" (click)="valorCuadroFila1(arrayJson.test[$index][0])">
+              <p>{{arrayJson.test[$index][0]}}</p>
             </div>
-            <div class="opciones margintop">
-              <p>{{item.texto[$index][1]}}</p>
+            <div class="opciones margintop" (click)="valorCuadroFila1(arrayJson.test[$index][1])">
+              <p>{{arrayJson.test[$index][1]}}</p>
             </div>
-            <div class="opciones">
-              <p>{{item.texto[$index][2]}}</p>
+            <div class="opciones" (click)="valorCuadroFila1(arrayJson.test[$index][2])">
+              <p>{{arrayJson.test[$index][2]}}</p>
             </div>
           </div>
-
-          <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">{{item.text2}}</p>
+          <div class="cuadros_seleccionado" id="fila{{$index+1}}">
+            <p class="indie-flower-regular">1</p>
           </div>
           <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">{{item.text3}}</p>
+            <p class="indie-flower-regular">2</p>
           </div>
           <div class="cuadros_seleccionado">
-            <p class="indie-flower-regular">{{item.text4}}</p>
+            <p class="indie-flower-regular">3</p>
           </div>
         </div>
-        }
       }
     </div>
   </main>
-  <div class="boton">
-    <div><img src="../../../../assets/img/mouse.png" alt="Imagen del mouse"></div>
-    <div>
-      <h2 class="indie-flower-regular">Evaluar</h2>
+  @if (divEvaluar) {
+    <div class="boton" (click)="evaluarAcronimo()">
+      <div><img src="../../../../assets/img/mouse.png" alt="Imagen del mouse"></div>
+      <div>
+        <h2 class="indie-flower-regular">Evaluar</h2>
+      </div>
+      <div><img src="../../../../assets/img/enter.png" alt="Imagen del boton enter"></div>
     </div>
-    <div><img src="../../../../assets/img/enter.png" alt="Imagen del boton enter"></div>
-  </div>
+  }
 </body>
