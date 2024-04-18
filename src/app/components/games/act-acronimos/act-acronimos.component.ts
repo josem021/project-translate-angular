@@ -1,12 +1,14 @@
 import { CommonModule } from "@angular/common"
 import { Component, OnInit } from "@angular/core"
+import { StarSkyComponent } from "../../star-sky/star-sky.component";
+import { BtnHomeComponent } from "../../btn-home/btn-home.component";
 
 @Component({
-  selector: "app-act-acronimos",
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: "./act-acronimos.component.html",
-  styleUrl: "./act-acronimos.component.css"
+    selector: "app-act-acronimos",
+    standalone: true,
+    templateUrl: "./act-acronimos.component.html",
+    styleUrl: "./act-acronimos.component.css",
+    imports: [CommonModule, StarSkyComponent, BtnHomeComponent]
 })
 export class ActAcronimosComponent implements OnInit {
 
