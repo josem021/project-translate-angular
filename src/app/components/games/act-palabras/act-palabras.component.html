@@ -1,38 +1,43 @@
 <app-star-sky></app-star-sky>
 <main class="game__general">
+
+  <div class="game__titulo">
+    <h1>Actividad de palabras</h1>
+  </div>
   <section class="game__tablero">
     <section class="game__puntuacion">
-      <div>
-        <h2 class="text--size-medium" style="color: aliceblue; text-align: center; " >WORD ACTIVITY</h2>
+
+      <div class="game__aciertos">
+        <h2 class="aciertos" id="aciertos">Aciertos: <a href="" id="acierto">{{aciertos}}</a></h2>
+        <h2 class="movimiento" id="movimientos">Movimientos: <a href="" id="movimientos">{{movimientos}}</a></h2>
+
       </div>
-     <div class="game__aciertos">
-        <h2 class="aciertos" id="aciertos">Aciertos: <a href="" id="acierto">0</a></h2>
-        <h2 class="movimiento" id="movimientos">Movimientos: <a href="" id="movimientos">0</a></h2>
-     </div> 
-   </section>
 
+    </section>
     <div class="grid">
-
-
-      @for(letra of elemntGame; track $index){
-        <div style="border: 1px solid green;">
-          <div class="containerEmoji">
-            @for(item of letra.image; track $index){
-              @if(item !== ""){
-                @if(item == "empty"){
-                  <pre class="emoji" style="border: 1px solid red;"></pre>
-                }@else{
-                  <pre class="emoji" style="border: 1px solid red;  height: 10vh;">{{item}}</pre>
-                }
-              }
-            }
-          </div>
-          <button style="display: grid;" id="0" class="cartas"><span class="carta__texto">{{letra.ingles}}</span></button>
+      @for (item of cartas; track $index ) {
+  
+      <div id="0" class="cartas anverso " (click)="voltearCarta($index)" [ngClass]="item.volteada ? 'volteada' : ''">
+        <img src="../../../../assets/img/interrogacion.jpg" [ngClass]="item.volteada ? 'ocultar' : 'maa'"
+          alt="">
+        <div class="reverso">
+          <p style="color: antiquewhite;" [ngClass]="item.volteada ? 'volteadaAnimation' : 'reverso-animacion'" alt="">{{item.urlDeImagen}}</p>
+          <p style="color: antiquewhite;" >{{item.nombreEspanol}}</p>
         </div>
+      </div>
 
-       
       }
-    </div>
-  </section>
-</main>
 
+    </div>
+    <button class="game__iniciar" (click)="iniciarJuego()" id="boton__iniciar" style="color: black;">Iniciar juego</button>
+  </section>
+ @if(message){
+  <div class="content">
+    <div class="content--message">
+      <h2  >Ganaste</h2>
+      <button (click)="ReiniciarJuego()"> Jugar de Nuevo</button>
+    </div>
+  </div>
+
+ }
+</main>

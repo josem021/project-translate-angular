@@ -1,898 +1,786 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { StarSkyComponent } from "../../star-sky/star-sky.component";
-
+import { Component } from '@angular/core';
+import { StarSkyComponent } from '../../star-sky/star-sky.component';
+// import { JsonService } from '../../json/json.service';
 @Component({
-    selector: 'app-act-palabras',
-    standalone: true,
-    templateUrl: './act-palabras.component.html',
-    styleUrl: './act-palabras.component.css',
-    imports: [CommonModule, StarSkyComponent]
+  selector: 'app-act-palabras',
+  standalone: true,
+  imports: [CommonModule, StarSkyComponent],
+  templateUrl: './act-palabras.component.html',
+  styleUrl: './act-palabras.component.css'
 })
-export class ActPalabrasComponent implements OnInit {
-  containerEmojis?: NodeListOf<HTMLDivElement>
-  elemntGame: any = []
-  emojiNoEmpty: Array<number> = []
+export class ActPalabrasComponent {
 
-  emojiChilds: Array<number>=[]
-  count = 0
-  count2 = 0
-  words:any [] =[
-    {
+    constructor() {
+      this.mezclar(this.imagenes);
+      this.mezclar(this.cartas);
+      this.acierto = 0;
+      this.movimiento = 0;
+    }
+    element:any=[]
+    ngOnInit(): void {
+      for (let i = 0; i < 12; i++) {
+        this.element.push( this.imagenes[i].image);
+      }
+      console.log(this.element)
+    }
+
+    acierto = 0;
+    message=false
+    movimiento = 0;
+    imagenes = [ {
       "ingles": "Loop",
-      "espanol": "Bucle",
-      "image": [
-        "🔁"
-      ]
+      "español": "Bucle",
+      "image": "🔁"
+      
     },
     {
       "ingles": "Break",
-      "espanol": "Romper",
-      "image": [
-        "⛓️",
-        "empty",
-        "💥"
-      ]
+      "español": "Romper",
+      "image":  "💥"
+      
     },
     {
       "ingles": "Code",
-      "espanol": "Codigo",
-      "image": [
-        "🤚",
+      "español": "Codigo",
+      "image": 
         "💻"
-      ]
+
     },
     {
       "ingles": "Array",
-      "espanol": "Coleccion",
-      "image": [
+      "español": "Coleccion",
+      "image": 
         "📝"
-      ]
+      
     },
     {
       "ingles": "Object",
-      "espanol": "Objecto",
-      "image": [
+      "español": "Objecto",
+      "image": 
         "🌟"
-      ]
+      
     },
     {
       "ingles": "Argument",
-      "espanol": "Argumento",
-      "image": [
-        "🗣",
+      "español": "Argumento",
+      "image": 
         "📑"
-      ]
+  
     },
     {
       "ingles": "Database",
-      "espanol": "Base de datos",
-      "image": [
+      "español": "Base de datos",
+      "image": 
         "🗄"
-      ]
+      
     },
     {
       "ingles": "Conditional",
-      "espanol": "Condicional",
-      "image": [
-        "❓",
-        "empty",
+      "español": "Condicional",
+      "image": 
         "❗"
-      ]
+      
     },
     {
       "ingles": "Inheritance",
-      "espanol": "Herencia",
-      "image": [
-        "👱",
-        "empty",
-        "empty",
-        "🧬"
-      ]
+      "español": "Herencia",
+      "image": 
+        "👱"
     },
     {
       "ingles": "Syntax",
-      "espanol": "Sintaxis",
-      "image": [
-        "🔢",
-        "empty",
-        "🔠",
-        "#️⃣"
-      ]
+      "español": "Sintaxis",
+      "image": 
+        "🔢"
+
     },
     {
       "ingles": "Style",
-      "espanol": "Estilo",
-      "image": [
+      "español": "Estilo",
+      "image": 
         "👔"
-      ]
+      
     },
     {
       "ingles": "Component",
-      "espanol": "Componentes",
-      "image": [
-        "🧩",
-        "empty",
-        "empty",
-        "📁"
-      ]
+      "español": "Componentes",
+      "image": 
+        "🧩"
+
     },
     {
       "ingles": "Generate",
-      "espanol": "Generar",
-      "image": [
-        "🖱️",
-        "📄"
-      ]
+      "español": "Generar",
+      "image":"📄"
+      
     },
     {
       "ingles": "Run",
-      "espanol": "Correr",
-      "image": [
+      "español": "Correr",
+      "image": 
         "🏃"
-      ]
     },
     {
       "ingles": "Save",
-      "espanol": "Salvar",
-      "image": [
+      "español": "Salvar",
+      "image": 
         "💾"
-      ]
+      
     },
     {
       "ingles": "While",
-      "espanol": "Mientras",
-      "image": [
+      "español": "Mientras",
+      "image": 
         "🔃"
-      ]
+      
     },
     {
       "ingles": "For",
-      "espanol": "Para",
-      "image": [
+      "español": "Para",
+      "image": 
         "🔄"
-      ]
+      
     },
     {
       "ingles": "Developer",
-      "espanol": "Desarrollador",
-      "image": [
+      "español": "Desarrollador",
+      "image": 
         "👨‍💻"
-      ]
+      
     },
     {
       "ingles": "Return",
-      "espanol": "Retornar",
-      "image": [
+      "español": "Retornar",
+      "image": 
         "↩️"
-      ]
+      
     },
     {
       "ingles": "Implement",
-      "espanol": "Implementar",
-      "image": [
-        "🖥️",
-        "empty",
-        "empty",
+      "español": "Implementar",
+      "image": 
+        
         "🔛"
-      ]
+      
     },
     {
       "ingles": "Concatenate",
-      "espanol": "Concatenar",
-      "image": [
+      "español": "Concatenar",
+      "image": 
         "🅰️",
-        "empty",
-        "🅱️",
-        "empty",
-        "➕"
-      ]
     },
     {
       "ingles": "Import",
-      "espanol": "Importar",
-      "image": [
+      "español": "Importar",
+      "image": 
         "📥"
-      ]
+      
     },
     {
       "ingles": "Build",
-      "espanol": "construcción",
-      "image": [
+      "español": "construcción",
+      "image": 
         "🏗️"
-      ]
+      
     },
     {
       "ingles": "Commit",
-      "espanol": "Comprometerse",
-      "image": [
-        "📤",
+      "español": "Comprometerse",
+      "image": 
         "📩"
-      ]
+      
     },
     {
       "ingles": "Encapsulation",
-      "espanol": "Encapsulamiento",
-      "image": [
+      "español": "Encapsulamiento",
+      "image": 
         "💊"
-      ]
+      
     },
     {
       "ingles": "Polymorphism",
-      "espanol": "Polimorfismo",
-      "image": [
-        "📂",
+      "español": "Polimorfismo",
+      "image": 
         "📁"
-      ]
-    },
-    {
-      "ingles": "Container",
-      "espanol": "Contenedor",
-      "image": [
-        "📦"
-      ]
-    },
-    {
-      "ingles": "Debugging",
-      "espanol": "Depuracion",
-      "image": [
-        "🔍",
-        "✔️"
-      ]
-    },
-    {
-      "ingles": "Namespace",
-      "espanol": "Espacio de Nombres",
-      "image": [
-        "🗒",
-        "🔡"
-      ]
-    },
-    {
-      "ingles": "right",
-      "espanol": "Derecha",
-      "image": [
-        "➡️"
-      ]
-    },
-    {
-      "ingles": "Top",
-      "espanol": "Abajo",
-      "image": [
-        "⬆️"
-      ]
-    },
-    {
-      "ingles": "Bottom",
-      "espanol": "Arriba",
-      "image": [
-        "⬇️"
-      ]
-    },
-    {
-      "ingles": "Justify",
-      "espanol": "justificar",
-      "image": [
-        "📏"
-      ]
-    },
-    {
-      "ingles": "left",
-      "espanol": "Izquierda",
-      "image": [
-        "➡️"
-      ]
-    },
-    {
-      "ingles": "Label",
-      "espanol": "Etiqueta",
-      "image": [
-        "🏷️"
-      ]
-    },
-    {
-      "ingles": "Delete",
-      "espanol": "Borrar",
-      "image": [
-        "🗑️"
-      ]
-    },
-    {
-      "ingles": "Abstraction",
-      "espanol": "Abstraccion",
-      "image": [
-        "empty",
-        "📗",
-        "📚",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Concurrency",
-      "espanol": "Concurrencia",
-      "image": [
-        "👨‍💻",
-        "empty",
-        "🛢"
-      ]
-    },
-    {
-      "ingles": "Parallelism",
-      "espanol": "Paralelismo",
-      "image": [
-        "🔀"
-      ]
-    },
-    {
-      "ingles": "Bug",
-      "espanol": "Fallo",
-      "image": [
-        "🚫",
-        "empty",
-        "🔌",
-        "empty",
-        "🤦"
-      ]
-    },
-    {
-      "ingles": "Data",
-      "espanol": "Datos",
-      "image": [
-        "empty",
-        "📓",
-        "📜",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Services",
-      "espanol": "Servicios",
-      "image": [
-        "empty",
-        "empty",
-        "🛠",
-        "💼"
-      ]
-    },
-    {
-      "ingles": "Injectable",
-      "espanol": "Inyectable",
-      "image": [
-        "💉"
-      ]
-    },
-    {
-      "ingles": "Export",
-      "espanol": "Exportar",
-      "image": [
-        "empty",
-        "📤",
-        "💻",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Routes",
-      "espanol": "Rutas",
-      "image": [
-        "🌎",
-        "empty",
-        "🗺️",
-        "empty",
-        "🚶"
-      ]
-    },
-    {
-      "ingles": "Import",
-      "espanol": "Importar",
-      "image": [
-        "empty",
-        "📥",
-        "💻",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Loading",
-      "espanol": "Cargando",
-      "image": [
-        "empty",
-        "🔋",
-        "🔄",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Binary Numbers",
-      "espanol": "Números Binarios",
-      "image": [
-        "empty",
-        "🔢",
-        "💻",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Selector",
-      "espanol": "Selector",
-      "image": [
-        "empty",
-        "empty",
-        "🔍",
-        "📜"
-      ]
-    },
-    {
-      "ingles": "Link",
-      "espanol": "Enlace",
-      "image": [
-        "📱",
-        "empty",
-        "🔗",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Get",
-      "espanol": "Obtener",
-      "image": [
-        "💁",
-        "empty",
-        "📦",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Obtain",
-      "espanol": "Obtener",
-      "image": [
-        "empty",
-        "🎁",
-        "empty",
-        "👐"
-      ]
-    },
-    {
-      "ingles": "Ways",
-      "espanol": "Maneras",
-      "image": [
-        "💳",
-        "💴",
-        "💵",
-        "👐"
-      ]
-    },
-    {
-      "ingles": "Appropriate",
-      "espanol": "Adecuado",
-      "image": [
-        "👌"
-      ]
-    },
-    {
-      "ingles": "Review",
-      "espanol": "Revisar",
-      "image": [
-        "🔎",
-        "📰",
-        "👀"
-      ]
-    },
-    {
-      "ingles": "Promise",
-      "espanol": "Prometer",
-      "image": [
-        "🤞"
-      ]
-    },
-    {
-      "ingles": "Index",
-      "espanol": "Índice",
-      "image": [
-        "📑",
-        "📌",
-        "🔍"
-      ]
-    },
-    {
-      "ingles": "Fragment",
-      "espanol": "Fragmento",
-      "image": [
-        "🧩",
-        "empty",
-        "🧩",
-        "empty",
-        "💻"
-      ]
-    },
-    {
-      "ingles": "Applications",
-      "espanol": "Aplicaciones",
-      "image": [
-        "📱"
-      ]
-    },
-    {
-      "ingles": "Class",
-      "espanol": "Clase",
-      "image": [
-        "💼",
-        "empty",
-        "🗒",
-        "empty",
-        "👱"
-      ]
-    },
-    {
-      "ingles": "Copy",
-      "espanol": "Copiar",
-      "image": [
-        "empty",
-        "📰",
-        "📝",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Identation",
-      "espanol": "Identacion",
-      "image": [
-        "👩‍💻",
-        "📑",
-        "🔎"
-      ]
-    },
-    {
-      "ingles": "Function",
-      "espanol": "Funcion",
-      "image": [
-        "💻",
-        "🔩",
-        "✅"
-      ]
-    },
-    {
-      "ingles": "Modifiers",
-      "espanol": "Modificadores",
-      "image": [
-        "empty",
-        "empty",
-        "👩‍💻",
-        "⚙️"
-      ]
-    },
-    {
-      "ingles": "Type",
-      "espanol": "Tipo",
-      "image": [
-        "📚",
-        "",
-        "🧬"
-      ]
-    },
-    {
-      "ingles": "Primary key",
-      "espanol": "Clave primaria",
-      "image": [
-        "🔑"
-      ]
-    },
-    {
-      "ingles": "Storage",
-      "espanol": "Almacenamiento",
-      "image": [
-        "empty",
-        "💽",
-        "📂",
-        "empty"
-      ]
-    },
-    {
-      "ingles": "Extensions",
-      "espanol": "Extenciones",
-      "image": [
-        "empty",
-        "empty",
-        "🔗",
-        "🔌"
-      ]
-    },
-    {
-      "ingles": "Connection",
-      "espanol": "Conexion",
-      "image": [
-        "🔌"
-      ]
-    },
-    {
-      "ingles": "screen",
-      "espanol": "Pantalla",
-      "image": [
-        "🖥️"
-      ]
-    },
-    {
-      "ingles": "Program",
-      "espanol": "Programa",
-      "image": [
-        "💻",
-        "👩‍💻",
-        "📱"
-      ]
-    },
-    {
-      "ingles": "Callback",
-      "espanol": "Retro llamada",
-      "image": [
-        "📳"
-      ]
-    },
-    {
-      "ingles": "payload",
-      "espanol": "Carga Util",
-      "image": [
-        "🔋"
-      ]
-    },
-    {
-      "ingles": "Memoization",
-      "espanol": "Memorización",
-      "image": [
-        "🧠"
-      ]
-    },
-    {
-      "ingles": "Streaming",
-      "espanol": "transmisión",
-      "image": [
-        "📺",
-        "empty",
-        "📡"
-      ]
-    }
-  ]
-  ngOnInit(): void {
-    // Cargar la api y llenas el array
-    for (let i = 0; i < 12; i++) {
-      this.elemntGame.push(this.words[i])
-    }
-  }
-  ngAfterViewinit(){
-    this.containerEmojis = document.querySelectorAll(".containerEmoji")
-    console.log(this.containerEmojis)
-    const emojiNoEmpty: any[] = [];
-    let emojiChilds: any[];
-    let count = 0;
-    let count2 = 0;
-    let  elementNoEmpty: any[] = [];
-    this.containerEmojis.forEach((element: HTMLElement) => {
-      count = element.childElementCount;
-     
-      count2 = 0;
-      emojiChilds = [];
-  
-      element.childNodes.forEach((x: Node) => {
-        if (x instanceof HTMLElement && x.tagName === 'PRE') {
-          emojiChilds.push(x);
-        }
-      });
-      switch (count) {
-        case 1:
-          emojiChilds.forEach((element: HTMLElement) => {
-            if (elementContent(element)) {
-              element.style.transform = 'scale(2)';
-              element.style.left = '30%';
-              element.style.top = '15%';
-            }
-          });
-          break;
-        case 2:
-          emojiChilds.forEach((element: HTMLElement) => {
-            if (elementContent(element)) {
-              element.style.left = '15%';
-              element.style.top = '30%';
-              element.style.transform = 'scale(1.5)';
-            }
-            emptyEmoji(element);
-          });
-          break;
-        case 3:
-          emojiChilds.forEach((element: HTMLElement) => {
-            if (elementContent(element)) {
-              element.style.top = '25%';
-              element.style.transform = 'scale(1.2)';
-              emptyEmoji(element);
-            }
-          });
-          break;
-        case 4:
-          emojiChilds.forEach((element: HTMLElement) => {
-            if (elementContent(element)) {
-              element.style.top = '20%';
-              element.style.transform = 'scale(1)';
-            }
-            emptyEmoji(element);
-          });
-          break;
-        case 5:
-          emojiChilds.forEach((element: HTMLElement) => {
-            if (elementContent(element)) {
-              element.style.top = '20%';
-              element.style.transform = 'scale(1)';
-            }
-            emptyEmoji(element);
-          });
-          break;
-        default:
-          // Handle other cases if needed
-          break;
-      }
-    });
-    function elementContent(element: HTMLElement): boolean {
-      if(element.textContent != ""){
-        return true
-      }else{
-        return false
-      }
-    }
-    
-    function emptyEmoji(element: HTMLElement) {
-      if(elementContent(element)){
-        emojiNoEmpty.push(1)
-      }else{
-       emojiNoEmpty.push(0)
-      }
-      elementNoEmpty.push(element)
-      count2 ++ 
-      try {
-        if(emojiChilds.length == count2){
-          if(count2 == 2){// [0, 1], 
-            //elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1){
-              // [0, 1]
-              elementNoEmpty[1].style.top = "45%"
-              elementNoEmpty[1].style.left = "5%"
-              elementNoEmpty[1].style.scale = "2"
-              elementNoEmpty[1].style.rotate = "45deg"
-            }
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0){
-              //[1, 0]
-              elementNoEmpty[0].style.top = "15%"
-              elementNoEmpty[0].style.left = "25%"
-              elementNoEmpty[0].style.scale ="2"
-              elementNoEmpty[0].style.rotate = "-45deg"
-            }
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 1){
-              //[1, 1]
-              elementNoEmpty[0].style.filter ="drop-shadow( 0.4vh -0.2vh .2vh black)"
-            }
-          }
-          if(count2 == 3){ 
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1){
-              // [1,0,1]
-              elementNoEmpty[0].style.left = "8%"
-              elementNoEmpty[2].style.right = "8%"
-              elementNoEmpty[0].style.top = "20%"
-              elementNoEmpty[2].style.top = "20%"
-              elementNoEmpty[0].style.scale = "1.5"
-              elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
-              elementNoEmpty[2].style.scale = "1.5"
-              elementNoEmpty[2].style.zIndex = "1"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1){
-              //[0, 1, 1]
-              elementNoEmpty[1].style.top = "30%"
-              elementNoEmpty[1].style.scale = "1.5"
-              elementNoEmpty[1].style.right ="15%"
-              elementNoEmpty[1].style.zIndex ="2"
-              elementNoEmpty[2].style.zIndex ="3"
-              elementNoEmpty[2].style.top = "30%"
-              elementNoEmpty[2].style.scale = "1.5"
-              elementNoEmpty[2].style.right ="15%"
-              elementNoEmpty[2].style.filter ="drop-shadow(-0.2vh -0.2vh .2vh black)"
-            }
-          }
-          if(count2 == 4){
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0){
-              // [1, 0, 1, 0]
-              elementNoEmpty[0].style.left = "8%"
-              elementNoEmpty[2].style.right = "8%"
-              elementNoEmpty[0].style.scale = "1.5"
-              elementNoEmpty[0].style.top = "20%"
-              elementNoEmpty[2].style.top = "20%"
-              elementNoEmpty[0].style.filter ="drop-shadow(.4vh 0vh .2vh black)"
-              elementNoEmpty[2].style.scale = "1.5"
-              elementNoEmpty[2].style.zIndex = "1"
-            }
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1){
-              // [1, 0, 0, 1]
-              elementNoEmpty[0].style.top = "5%"
-              elementNoEmpty[0].style.scale = "1.5"
-              elementNoEmpty[0].style.left ="15%"
-              elementNoEmpty[3].style.zIndex ="4"
-              elementNoEmpty[3].style.top = "5%"
-              elementNoEmpty[3].style.scale = "1.5"
-              elementNoEmpty[3].style.left ="15%"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0){
-              console.log("count2 == 4-3")
-              //[0, 1, 1, 0]
-              elementNoEmpty[1].style.top = "30%"
-              elementNoEmpty[1].style.scale = "1.5"
-              elementNoEmpty[1].style.right ="15%"
-              elementNoEmpty[1].style.zIndex ="6"
-              elementNoEmpty[2].style.top = "30%"
-              elementNoEmpty[2].style.scale = "1.5"
-              elementNoEmpty[2].style.right ="15%"
-              elementNoEmpty[1].style.filter ="drop-shadow(.2vh .2vh .2vh black)"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 1){
-              //[0, 0, 1, 1]
-              elementNoEmpty[2].style.top = "1%"
-              elementNoEmpty[2].style.scale = "1.5"
-              elementNoEmpty[2].style.right ="15%"
-              elementNoEmpty[3].style.zIndex ="4"
-              elementNoEmpty[3].style.top = "5%"
-              elementNoEmpty[3].style.scale = "1.5"
-              elementNoEmpty[3].style.right ="15%"
-              elementNoEmpty[2].style.filter ="drop-shadow(-.2vh .2vh .2vh black)"
-            }
-            if(emojiNoEmpty[0] == 1 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 1){
-              //[1, 0, 1, 1]
-              elementNoEmpty[0].style.top = "1%"
-              elementNoEmpty[0].style.scale = "1.2"
-              elementNoEmpty[0].style.left ="0%"
-              elementNoEmpty[0].style.top = "5%"
-              elementNoEmpty[2].style.top = "5%"
-              elementNoEmpty[2].style.scale = "1.2"
-              elementNoEmpty[2].style.right ="5%"
-              elementNoEmpty[3].style.scale = "1.2"
-              elementNoEmpty[3].style.filter ="drop-shadow(-.2vh .2vh .2vh black)"
-            }
-    
-          }else if(count2 == 5){//  [0, 1, 1, 0, 1]
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1 && emojiNoEmpty[4] == 1){
-              // [0, 0, 0, 1, 1]
-              elementNoEmpty[3].style.top = "7%"
-              elementNoEmpty[4].style.top = "1%"
-              elementNoEmpty[4].style.filter ="drop-shadow(0vh .4vh .2vh black)"
-              elementNoEmpty[3].style.scale = "1.5"
-              elementNoEmpty[4].style.scale = "1.5"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
-              // [0, 1, 0, 0, 1]
-              elementNoEmpty[1].style.top = "30%"
-              elementNoEmpty[4].style.top = "30%"
-              elementNoEmpty[1].style.scale = "1.5"
-              elementNoEmpty[4].style.scale = "1.5"
-              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 1 && emojiNoEmpty[4] == 1){
-              // [0, 1, 0, 1, 1]
-              elementNoEmpty[1].style.top = "20%"
-              elementNoEmpty[3].style.top = "20%"
-              elementNoEmpty[4].style.top = "20%"
-              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 0 && emojiNoEmpty[2] == 0 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
-              // [0, 0, 0, 0, 1]
-              elementNoEmpty[4].style.top = "20%"
-              elementNoEmpty[4].style.scale = "2"
-              elementNoEmpty[4].style.rotate = "180deg"
-              elementNoEmpty[4].style.filter ="drop-shadow(0vh -.4vh .2vh black)"
-            }
-            if(emojiNoEmpty[0] == 0 && emojiNoEmpty[1] == 1 && emojiNoEmpty[2] == 1 && emojiNoEmpty[3] == 0 && emojiNoEmpty[4] == 1){
-              // [0, 1, 1, 0, 1]
-              elementNoEmpty[4].parent.rotate = "180deg"
-    
-            }
-          }    
-        }
-    
-      } catch (error) {}
       
     }
+    // {
+    //   "ingles": "Container",
+    //   "español": "Contenedor",
+    //   "image": [
+    //     "📦"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Debugging",
+    //   "español": "Depuracion",
+    //   "image": [
+    //     "🔍",
+    //     "✔️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Namespace",
+    //   "español": "Espacio de Nombres",
+    //   "image": [
+    //     "🗒",
+    //     "🔡"
+    //   ]
+    // },
+    // {
+    //   "ingles": "right",
+    //   "español": "Derecha",
+    //   "image": [
+    //     "➡️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Top",
+    //   "español": "Abajo",
+    //   "image": [
+    //     "⬆️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Bottom",
+    //   "español": "Arriba",
+    //   "image": [
+    //     "⬇️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Justify",
+    //   "español": "justificar",
+    //   "image": [
+    //     "📏"
+    //   ]
+    // },
+    // {
+    //   "ingles": "left",
+    //   "español": "Izquierda",
+    //   "image": [
+    //     "➡️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Label",
+    //   "español": "Etiqueta",
+    //   "image": [
+    //     "🏷️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Delete",
+    //   "español": "Borrar",
+    //   "image": [
+    //     "🗑️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Abstraction",
+    //   "español": "Abstraccion",
+    //   "image": [
+    //     "empty",
+    //     "📗",
+    //     "📚",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Concurrency",
+    //   "español": "Concurrencia",
+    //   "image": [
+    //     "👨‍💻",
+    //     "empty",
+    //     "🛢"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Parallelism",
+    //   "español": "Paralelismo",
+    //   "image": [
+    //     "🔀"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Bug",
+    //   "español": "Fallo",
+    //   "image": [
+    //     "🚫",
+    //     "empty",
+    //     "🔌",
+    //     "empty",
+    //     "🤦"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Data",
+    //   "español": "Datos",
+    //   "image": [
+    //     "empty",
+    //     "📓",
+    //     "📜",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Services",
+    //   "español": "Servicios",
+    //   "image": [
+    //     "empty",
+    //     "empty",
+    //     "🛠",
+    //     "💼"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Injectable",
+    //   "español": "Inyectable",
+    //   "image": [
+    //     "💉"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Export",
+    //   "español": "Exportar",
+    //   "image": [
+    //     "empty",
+    //     "📤",
+    //     "💻",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Routes",
+    //   "español": "Rutas",
+    //   "image": [
+    //     "🌎",
+    //     "empty",
+    //     "🗺️",
+    //     "empty",
+    //     "🚶"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Import",
+    //   "español": "Importar",
+    //   "image": [
+    //     "empty",
+    //     "📥",
+    //     "💻",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Loading",
+    //   "español": "Cargando",
+    //   "image": [
+    //     "empty",
+    //     "🔋",
+    //     "🔄",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Binary Numbers",
+    //   "español": "Números Binarios",
+    //   "image": [
+    //     "empty",
+    //     "🔢",
+    //     "💻",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Selector",
+    //   "español": "Selector",
+    //   "image": [
+    //     "empty",
+    //     "empty",
+    //     "🔍",
+    //     "📜"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Link",
+    //   "español": "Enlace",
+    //   "image": [
+    //     "📱",
+    //     "empty",
+    //     "🔗",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Get",
+    //   "español": "Obtener",
+    //   "image": [
+    //     "💁",
+    //     "empty",
+    //     "📦",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Obtain",
+    //   "español": "Obtener",
+    //   "image": [
+    //     "empty",
+    //     "🎁",
+    //     "empty",
+    //     "👐"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Ways",
+    //   "español": "Maneras",
+    //   "image": [
+    //     "💳",
+    //     "💴",
+    //     "💵",
+    //     "👐"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Appropriate",
+    //   "español": "Adecuado",
+    //   "image": [
+    //     "👌"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Review",
+    //   "español": "Revisar",
+    //   "image": [
+    //     "🔎",
+    //     "📰",
+    //     "👀"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Promise",
+    //   "español": "Prometer",
+    //   "image": [
+    //     "🤞"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Index",
+    //   "español": "Índice",
+    //   "image": [
+    //     "📑",
+    //     "📌",
+    //     "🔍"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Fragment",
+    //   "español": "Fragmento",
+    //   "image": [
+    //     "🧩",
+    //     "empty",
+    //     "🧩",
+    //     "empty",
+    //     "💻"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Applications",
+    //   "español": "Aplicaciones",
+    //   "image": [
+    //     "📱"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Class",
+    //   "español": "Clase",
+    //   "image": [
+    //     "💼",
+    //     "empty",
+    //     "🗒",
+    //     "empty",
+    //     "👱"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Copy",
+    //   "español": "Copiar",
+    //   "image": [
+    //     "empty",
+    //     "📰",
+    //     "📝",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Identation",
+    //   "español": "Identacion",
+    //   "image": [
+    //     "👩‍💻",
+    //     "📑",
+    //     "🔎"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Function",
+    //   "español": "Funcion",
+    //   "image": [
+    //     "💻",
+    //     "🔩",
+    //     "✅"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Modifiers",
+    //   "español": "Modificadores",
+    //   "image": [
+    //     "empty",
+    //     "empty",
+    //     "👩‍💻",
+    //     "⚙️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Type",
+    //   "español": "Tipo",
+    //   "image": [
+    //     "📚",
+    //     "",
+    //     "🧬"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Primary key",
+    //   "español": "Clave primaria",
+    //   "image": [
+    //     "🔑"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Storage",
+    //   "español": "Almacenamiento",
+    //   "image": [
+    //     "empty",
+    //     "💽",
+    //     "📂",
+    //     "empty"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Extensions",
+    //   "español": "Extenciones",
+    //   "image": [
+    //     "empty",
+    //     "empty",
+    //     "🔗",
+    //     "🔌"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Connection",
+    //   "español": "Conexion",
+    //   "image": [
+    //     "🔌"
+    //   ]
+    // },
+    // {
+    //   "ingles": "screen",
+    //   "español": "Pantalla",
+    //   "image": [
+    //     "🖥️"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Program",
+    //   "español": "Programa",
+    //   "image": [
+    //     "💻",
+    //     "👩‍💻",
+    //     "📱"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Callback",
+    //   "español": "Retro llamada",
+    //   "image": [
+    //     "📳"
+    //   ]
+    // },
+    // {
+    //   "ingles": "payload",
+    //   "español": "Carga Util",
+    //   "image": [
+    //     "🔋"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Memoization",
+    //   "español": "Memorización",
+    //   "image": [
+    //     "🧠"
+    //   ]
+    // },
+    // {
+    //   "ingles": "Streaming",
+    //   "español": "transmisión",
+    //   "image": [
+    //     "📺",
+    //     "empty",
+    //     "📡"
+    //   ]
+    // },
+    //   {
+    //     "ingles": "Loop",
+    //     "español": "Bucle",
+    //     "image": [
+    //       "🔁"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Break",
+    //     "español": "Romper",
+    //     "image": [
+    //       "⛓️",
+    //       "empty",
+    //       "💥"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Code",
+    //     "español": "Codigo",
+    //     "image": [
+    //       "🤚",
+    //       "💻"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Array",
+    //     "español": "Coleccion",
+    //     "image": [
+    //       "📝"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Object",
+    //     "español": "Objecto",
+    //     "image": [
+    //       "🌟"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Argument",
+    //     "español": "Argumento",
+    //     "image": [
+    //       "🗣",
+    //       "📑"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Database",
+    //     "español": "Base de datos",
+    //     "image": [
+    //       "🗄"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Conditional",
+    //     "español": "Condicional",
+    //     "image": [
+    //       "❓",
+    //       "empty",
+    //       "❗"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Inheritance",
+    //     "español": "Herencia",
+    //     "image": [
+    //       "👱",
+    //       "empty",
+    //       "empty",
+    //       "🧬"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Syntax",
+    //     "español": "Sintaxis",
+    //     "image": [
+    //       "🔢",
+    //       "empty",
+    //       "🔠",
+    //       "#️⃣"
+    //     ]
+    //   },
+    //   {
+    //     "ingles": "Style",
+    //     "español": "Estilo",
+    //     "image": [
+    //       "👔"
+    //     ]
+    //   },
+      // Agrega más imágenes aquí
+    ];
+
+    cartas: any[] = [];
+    iniciaJuego: boolean = false;
+    últimoIndiceVolteado: number = -1;
+    aciertos: number = 0;
+    movimientos: number = 0;
+
+    iniciarJuego() {
+      this.iniciaJuego = true;
+      this.crearCartas();
+      this.mezclar(this.cartas);
+    }
+
+    crearCartas() {
+      this.cartas = [];
+        this.imagenes.slice(0, 8).forEach((imagen, index) => {
+        this.cartas.push({ nombreIngles: imagen.ingles, nombreEspanol:imagen.ingles, urlDeImagen: imagen.image, volteada: false, emparejada: false });
+        this.cartas.push({ nombreIngles: imagen.ingles, nombreEspanol:imagen.español, urlDeImagen: imagen.image, volteada: false, emparejada: false });
+      });
+      console.log(this.cartas)
+    }
+    ReiniciarJuego(){
+      window.location.reload();
+    }
+
+    mezclar(array: any[]) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    voltearCarta(indice: number) {
+      if (!this.iniciaJuego) return;
+
+      const carta = this.cartas[indice];
+      if (!carta.volteada && this.últimoIndiceVolteado !== indice) {
+        carta.volteada = true;
+
+        if (this.últimoIndiceVolteado !== -1) {
+          const cartaAnterior = this.cartas[this.últimoIndiceVolteado];
+          if (cartaAnterior.nombreIngles === carta.nombreIngles) {
+            cartaAnterior.emparejada = true;
+            carta.emparejada = true;
+            this.aciertos++;
+
+            if(this.aciertos===8){
+              this.message=true
+            }
+          } else {
+            setTimeout(() => {
+              cartaAnterior.volteada = false;
+              carta.volteada = false;
+            }, 1000);
+          }
+          this.movimientos++;
+          this.últimoIndiceVolteado = -1;
+        } else {
+          this.últimoIndiceVolteado = indice;
+        }
+      }
+    }
   }
-
-
-}

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+
 import { ActPalabrasComponent } from './act-palabras.component';
 
 describe('ActPalabrasComponent', () => {
@@ -11,7 +12,7 @@ describe('ActPalabrasComponent', () => {
       imports: [ActPalabrasComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ActPalabrasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

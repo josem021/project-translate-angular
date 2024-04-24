@@ -1,86 +1,180 @@
 .game__general{
-    border: 6px dashed #ffffff;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
+
+}
+*{
+  font-size: 2vw;
 }
 /* estilos para la puntuacion */
- .game__puntuacion{
-    display: flex;
-    margin-top: 1vw;
-    justify-content: center;
-    flex-direction: column-reverse;
+.game__puntuacion{
+    width: 50%;
+    margin: auto;
     border-radius: 10px;
+    border: 0.1vw solid #ffffff;
     user-select: none;
-   
 }
-.text--size-medium{
-    font-size: 6vh;
+.game__iniciar{
+
+    color: #ffffff;
+    padding: 0.5vw 2vw;
+    font-weight: bold;
+    font-size: 1vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.game__iniciar:hover {
+    background: #3198dd;
 }
 .game__aciertos{
     display: flex;
-    position: absolute;
-  
-    gap: 2vw;
-    left: 10vw;
+    gap: 4vw;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    padding: 1vw;
 }
+
+
 .game__aciertos h2{
     color: #ffffff;
-    font-size: 2rem;
 }
 .game__aciertos a{
     text-decoration: none;
-    font-size: 3rem;
     color: #3198dd;
 }
+
+.game__titulo{
+  
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+
+    justify-content: center;
+    font-size: 4vw;
+    border-radius: 1vw;
+    color: #ffffff;
+    height: 10vh;
+}
+
 /* fin  */
 
 /* estilos para el tablero */
 .game__tablero {
     gap: 1vw;
-    height: 93vh;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-} 
+    justify-content: center;
+    align-items: center;
+    border: 0.4vw  #ffffff;
+    border-radius: 1vw;
+
+}
 .grid {
-    margin: auto;
-    width: 40vw;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    grid-gap: 1vw; 
-}
+    grid-template-rows: repeat(4,1fr);
+    grid-gap: 0.2vw;
+    padding: 10px;
+    margin: auto;
 
+    width: 30vw;
+}
 .cartas{
-    width: 9vw;
-    height: 9vw;
-    font-size: 4vw;
-    background-color:  #88c9f8;
-    border-radius: 1.5vh;
-    border:.5vh solid white;
-    font-weight: 900;
-    color:var(--color-second-light-pink)
-}
-.carta__texto{
-    font-weight: 100;
-    font-size: 1.5vw;
-}
-/* fin */
-.game__iniciar{
-    background-image: linear-gradient(to right,#f07587,#91d6ec);
-    color: #ffffff;
-    padding: 20px 40px;
-    font-weight: bold;
-    border: none;
+    width: 7vw;
+    height: 7vw;
+    position: relative;
+    overflow: hidden;
     border-radius: 5px;
-    cursor: pointer; 
+    object-fit: cover;
+    transition: all 600ms
+    ;
+    cursor: pointer;
 }
-.game__iniciar:hover {
-    background: #3198dd;
+
+.carta .anverso,
+.carta .reverso {
+    width: 7vw;
+    height: 7vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    opacity: 0;
+}
+.maa {
+
+}
+
+  .carta .reverso   {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: all 600ms;
+  }
+  
+
+  .carta.volteada  .anverso  {
+    transform: rotateY(180deg);
+    opacity: 1;
+    transition: all 600ms;
+  }
+
+  .carta .volteadaAnimation     {
+    opacity: 1;
+    transition: all ease-in-out 600ms;
+    transform: rotateY(0deg);
+    font-size: 10vw;
+  }
+  .carta:hover{
+ border: solid 1px white;
+  }
+   .reverso-animacion{
+    transition: all ease-in-out 600ms;
+    transform: rotateY(-180deg);
+    opacity: 0;
+    font-size: 10em;
+  }
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(0deg);
+    transition: all ease-in-out 400ms;
+
+  }
+  .ocultar{
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: all ease-in-out 400ms;
+    z-index: 0;
+    position: absolute;
+}
+.content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  z-index: 10000;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgb(0, 0, 0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content--message{
+  background-color: #ffffff;
+  padding: 5vw;
+  color: black;
+  border-radius: 0.3vw;
 }
 
 
-
-
-
-
+/* fin */
+/*  */
