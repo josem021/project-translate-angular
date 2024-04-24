@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { BtnHomeComponent } from '../../btn-home/btn-home.component';
 import { StarSkyComponent } from "../../star-sky/star-sky.component";
 
@@ -21,7 +21,22 @@ export class ActPalabrasVerbosFracialesComponent implements OnInit{
   emojiChilds: Array<number>=[]
   count = 0
   count2 = 0
-
+  @HostListener('scroll', ['$event.target'])
+  onScroll(contenedor1: HTMLElement){
+    const scrollPercentage = contenedor1.scrollTop / (contenedor1.scrollHeight - contenedor1.clientHeight);
+    const targetScrollTop = scrollPercentage * (this.contenedor2.scrollHeight - this.contenedor2.clientHeight);
+    this.contenedor2.scrollTop = targetScrollTop;
+  }
+  onScroll1(contenedor: HTMLElement){
+    const scrollPercentage = contenedor.scrollTop / (contenedor.scrollHeight - contenedor.clientHeight);
+    const targetScrollTop = scrollPercentage * (this.contenedor2.scrollHeight - this.contenedor2.clientHeight);
+    return targetScrollTop;
+  }
+  onScroll2(contenedor: HTMLElement){
+    const scrollPercentage = contenedor.scrollTop / (contenedor.scrollHeight - contenedor.clientHeight);
+    const targetScrollTop = scrollPercentage * (this.contenedor1.scrollHeight - this.contenedor1.clientHeight);
+    return targetScrollTop;
+  }
   words: any = [
     {
       "palabras": [
@@ -2043,11 +2058,13 @@ export class ActPalabrasVerbosFracialesComponent implements OnInit{
     this.contenedor2 = document.getElementById('containerWordsRight');
     this.contenedor1.addEventListener("scroll", () => {
       this.contenedor2.scrollTop = this.contenedor1.scrollTop;
+      //this.contenedor2.scrollTop = this.onScroll2(this.contenedor1)
     });
 
     this.contenedor2.addEventListener('scroll', () => {
       // Sincroniza el scroll de contenedor1 con contenedor2
       this.contenedor1.scrollTop = this.contenedor2.scrollTop;
+      //this.contenedor1.scrollTop = this.onScroll1(this.contenedor2)
     });
     this.containerEmojis = document.querySelectorAll(".containerEmoji")
     console.log(this.containerEmojis)
